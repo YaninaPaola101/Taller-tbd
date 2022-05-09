@@ -1,8 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package com.mycompany.taller;
+
+import Funcionalidades.DatabaseConnection;
+import Funcionalidades.LoginDAO;
+import Funcionalidades.LoginModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,6 +34,7 @@ public class Login extends javax.swing.JFrame {
         textUsuario = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         textPasword = new javax.swing.JPasswordField();
+        buttonLogin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,6 +65,15 @@ public class Login extends javax.swing.JFrame {
         textPasword.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(textPasword, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 160, 30));
 
+        buttonLogin.setBackground(new java.awt.Color(255, 0, 51));
+        buttonLogin.setText("Entrar");
+        buttonLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLoginActionPerformed(evt);
+            }
+        });
+        jPanel1.add(buttonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 100, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -76,9 +88,23 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+    private void buttonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginActionPerformed
+        String usuario = textUsuario.getText();
+        String contrasenia = textPasword.getText();
+        LoginModel actualLogin = LoginDAO.getLogin(new LoginModel(usuario, contrasenia));
+        if (actualLogin != null) {
+            JOptionPane.showMessageDialog(this,
+                    "Login exitoso");
+            DatabaseConnection.closeConnection();
+            DatabaseConnection.openConnection();
+            DatabaseConnection.setPID(LoginDAO.getPID());
+
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "Login fallido");
+    }//GEN-LAST:event_buttonLoginActionPerformed
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -112,6 +138,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
