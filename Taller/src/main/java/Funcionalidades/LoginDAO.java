@@ -44,15 +44,16 @@ public class LoginDAO {
 
     public static LoginModel getLogin(LoginModel login) {
         Connection c = DatabaseConnection.getConnection();
-        String query = "SELECT * FROM public.\"Login\"" +
-                " where usuario='" + login.usuario + "'" +
+        String query = "SELECT * FROM public.usuario" +
+                " where nombre='" + login.usuario + "'" +
                 " and contrasenia='" + login.contrasenia + "'";
         LoginModel loginResponse = null;
         try {
+            System.out.println(query);
             Statement stat = c.createStatement();
             ResultSet rs = stat.executeQuery(query);
             if (rs.next()) {
-                loginResponse = new LoginModel(rs.getString("usuario"),
+                loginResponse = new LoginModel(rs.getString("nombre"),
                                         rs.getString("contrasenia"));
             }
         } catch (Exception e) {
