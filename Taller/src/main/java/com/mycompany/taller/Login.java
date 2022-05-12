@@ -110,10 +110,17 @@ public class Login extends javax.swing.JFrame {
                     "Membresia expirada");
                     return;
                 }
-            
-                JOptionPane.showMessageDialog(this,
-                    "Login exitoso");
                 LoginDAO.guardarSesion();
+                dispose();
+                if(rolModel.nombreRol.equals("instructor")){
+                    new Instructor().setVisible(true);
+                }
+                if(rolModel.nombreRol.equals("administrador")){
+                    new Registro().setVisible(true);
+                }
+                if(rolModel.nombreRol.equals("usuario")){
+                    new Horario().setVisible(true);
+                }
             } else {
                 JOptionPane.showMessageDialog(this,
                     "No cuenta con rol asignado, contactese con el administrador");
