@@ -2,6 +2,8 @@
 package Funcionalidades;
 
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -94,5 +96,39 @@ public class LoginDAO {
         }
         return loginResponse;
     }
-
+    
+    public static void guardarSesion(){
+        DatabaseConnection.closeConnection();
+        DatabaseConnection.openConnection();
+        int pid = LoginDAO.getPID();
+        DatabaseConnection.setPID(pid);
+        Connection c = DatabaseConnection.getConnection();
+        InetAddress ip = getIp();
+        
+        String query = "INSERT INTO public.sesion(ip,pid) " +
+                "values ('" + ip.getHostAddress() + "','" + pid + "')";
+        System.out.println(query);
+        try {
+            PreparedStatement pstmt;
+            pstmt = c.prepareStatement(query);
+            pstmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        }        
+    }
+    private static InetAddress getIp(){
+        InetAddress ip = null;
+        String hostname;
+        try {
+            ip = InetAddress.getLocalHost();
+            hostname = ip.getHostName();
+            System.out.println("Your current IP address : " + ip);
+            System.out.println("Your current Hostname : " + hostname);
+        } catch (UnknownHostException e) { 
+            e.printStackTrace();
+        } finally{
+            return ip;
+        }
+    } 
 }

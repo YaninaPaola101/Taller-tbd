@@ -95,10 +95,7 @@ public class Login extends javax.swing.JFrame {
         if (actualLogin != null) {
             JOptionPane.showMessageDialog(this,
                     "Login exitoso");
-            DatabaseConnection.closeConnection();
-            DatabaseConnection.openConnection();
-            DatabaseConnection.setPID(LoginDAO.getPID());
-
+            LoginDAO.guardarSesion();
         } else {
             JOptionPane.showMessageDialog(this,
                     "Login fallido");
