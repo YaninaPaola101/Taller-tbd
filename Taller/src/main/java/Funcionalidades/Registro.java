@@ -2,29 +2,28 @@
 package Funcionalidades;
 
 
-public class UsuarioFun {
+public class Registro {
 
-    private String nombreUsuario;
+    private String nombre;
     private int edad; 
-    private int telefono;
     private boolean activo;
 
-    public UsuarioFun() {
+    public Registro() {
     }
 
-    public UsuarioFun(String nombreUsuario, int edad, int telefono, boolean activo) {
-        this.nombreUsuario = nombreUsuario;
+    public Registro(String nombreUsuario, int edad, boolean activo) {
+        this.nombre = nombreUsuario;
         this.edad = edad;
-        this.telefono = telefono;
+        
         this.activo = activo;
     }
 
     public String getNombreUsuario() {
-        return nombreUsuario;
+        return nombre;
     }
 
     public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
+        this.nombre = nombreUsuario;
     }
 
     public int getEdad() {
@@ -34,15 +33,7 @@ public class UsuarioFun {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-
-    public int getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
-    }
-
+    
     public boolean isActivo() {
         return activo;
     }

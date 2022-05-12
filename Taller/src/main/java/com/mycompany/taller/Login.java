@@ -45,34 +45,36 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Usuario:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Contrasenia:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
         textUsuario.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(textUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 160, 30));
+        jPanel1.add(textUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 160, 30));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("LOGIN");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 80, 40));
 
         textPasword.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(textPasword, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 160, 30));
+        jPanel1.add(textPasword, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 160, 30));
 
-        buttonLogin.setBackground(new java.awt.Color(255, 0, 51));
+        buttonLogin.setBackground(new java.awt.Color(204, 255, 255));
+        buttonLogin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        buttonLogin.setForeground(new java.awt.Color(0, 0, 0));
         buttonLogin.setText("Entrar");
         buttonLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonLoginActionPerformed(evt);
             }
         });
-        jPanel1.add(buttonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 100, 30));
+        jPanel1.add(buttonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,7 +84,7 @@ public class Login extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
         );
 
         pack();
