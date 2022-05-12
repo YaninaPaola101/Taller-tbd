@@ -18,7 +18,7 @@ public class RegistroFun {
        try {
            
            ps = con.prepareStatement(sql);
-           ps.setString(1, re.getNombre());
+           ps.setString(1, re.getNombreUsuario());
            ps.setInt(2, re.getEdad());
            ps.setBoolean(3, re.isActivo());
            ps.execute();

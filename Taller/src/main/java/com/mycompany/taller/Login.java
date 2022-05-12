@@ -1,9 +1,10 @@
 
 package com.mycompany.taller;
 
-import Funcionalidades.DatabaseConnection;
 import Funcionalidades.LoginDAO;
 import Funcionalidades.LoginModel;
+import Funcionalidades.RolModel;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -93,11 +94,30 @@ public class Login extends javax.swing.JFrame {
     private void buttonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginActionPerformed
         String usuario = textUsuario.getText();
         String contrasenia = textPasword.getText();
-        LoginModel actualLogin = LoginDAO.getLogin(new LoginModel(usuario, contrasenia));
+        LoginModel actualLogin = LoginDAO.getLogin(new LoginModel(usuario, contrasenia,0));
+        
         if (actualLogin != null) {
-            JOptionPane.showMessageDialog(this,
+            RolModel rolModel = LoginDAO.getRol(actualLogin.id);
+            if(rolModel != null ){
+                if(!rolModel.activo ){
+                     JOptionPane.showMessageDialog(this,
+                        "Usuario dado de baja");
+                     return;
+                }
+                Date horaActual = new Date();  
+                if(!(horaActual.after(rolModel.fechaIni) && horaActual.before(rolModel.fechaFin))){
+                    JOptionPane.showMessageDialog(this,
+                    "Membresia expirada");
+                    return;
+                }
+            
+                JOptionPane.showMessageDialog(this,
                     "Login exitoso");
-            LoginDAO.guardarSesion();
+                LoginDAO.guardarSesion();
+            } else {
+                JOptionPane.showMessageDialog(this,
+                    "No cuenta con rol asignado, contactese con el administrador");
+            }
         } else {
             JOptionPane.showMessageDialog(this,
                     "Login fallido");
