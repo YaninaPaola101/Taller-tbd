@@ -173,43 +173,43 @@ public class Menu extends javax.swing.JFrame {
     private void ButtonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRegistroActionPerformed
         registro = new Registro();
         registro.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_ButtonRegistroActionPerformed
 
     private void ButtonInstructorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInstructorActionPerformed
         instructor = new Instructor();
         instructor.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_ButtonInstructorActionPerformed
 
     private void ButtonHorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonHorarioActionPerformed
         usuario = new Usuarios();
         usuario.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_ButtonHorarioActionPerformed
 
     private void ButtonSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSucursalActionPerformed
         sucursal = new Sucursal();
         sucursal.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_ButtonSucursalActionPerformed
 
     private void ButtonUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonUsuarioActionPerformed
         usuario = new Usuarios();
         usuario.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_ButtonUsuarioActionPerformed
 
     private void ButtonPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPlanActionPerformed
         plan = new Plan();
         plan.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_ButtonPlanActionPerformed
 
     private void ButtonDisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDisciplinaActionPerformed
         disciplina = new Disciplina();
         disciplina.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_ButtonDisciplinaActionPerformed
 
     /**

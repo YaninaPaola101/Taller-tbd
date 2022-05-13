@@ -116,7 +116,7 @@ public class Login extends javax.swing.JFrame {
                     new Instructor().setVisible(true);
                 }
                 if(rolModel.nombreRol.equals("administrador")){
-                    new Registro().setVisible(true);
+                    new Menu().setVisible(true);
                 }
                 if(rolModel.nombreRol.equals("usuario")){
                     new Horario().setVisible(true);
