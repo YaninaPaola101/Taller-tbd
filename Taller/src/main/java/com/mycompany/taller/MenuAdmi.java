@@ -8,7 +8,7 @@ package com.mycompany.taller;
  *
  * @author rybel
  */
-public class Menu extends javax.swing.JFrame {
+public class MenuAdmi extends javax.swing.JFrame {
 
     private Disciplina disciplina;
     private Horario horario;
@@ -17,7 +17,7 @@ public class Menu extends javax.swing.JFrame {
     private Plan plan;
     private Registro registro;
     private Sucursal sucursal;
-    public Menu() {
+    public MenuAdmi() {
         initComponents();
     }
     
@@ -37,13 +37,13 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(84, 81, 81));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
         jPanel2.setForeground(new java.awt.Color(0, 153, 153));
 
-        ButtonDisciplina.setBackground(new java.awt.Color(204, 255, 255));
+        ButtonDisciplina.setBackground(new java.awt.Color(204, 204, 204));
         ButtonDisciplina.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         ButtonDisciplina.setForeground(new java.awt.Color(0, 0, 0));
         ButtonDisciplina.setText("Disciplina");
@@ -53,7 +53,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        ButtonPlan.setBackground(new java.awt.Color(204, 255, 255));
+        ButtonPlan.setBackground(new java.awt.Color(204, 204, 204));
         ButtonPlan.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         ButtonPlan.setForeground(new java.awt.Color(0, 0, 0));
         ButtonPlan.setText("Plan");
@@ -63,7 +63,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        ButtonUsuario.setBackground(new java.awt.Color(204, 255, 255));
+        ButtonUsuario.setBackground(new java.awt.Color(204, 204, 204));
         ButtonUsuario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         ButtonUsuario.setForeground(new java.awt.Color(0, 0, 0));
         ButtonUsuario.setText("Usuario");
@@ -73,7 +73,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        ButtonSucursal.setBackground(new java.awt.Color(204, 255, 255));
+        ButtonSucursal.setBackground(new java.awt.Color(204, 204, 204));
         ButtonSucursal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonSucursal.setForeground(new java.awt.Color(0, 0, 0));
         ButtonSucursal.setText("Sucursal");
@@ -83,7 +83,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        ButtonHorario.setBackground(new java.awt.Color(204, 255, 255));
+        ButtonHorario.setBackground(new java.awt.Color(204, 204, 204));
         ButtonHorario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonHorario.setForeground(new java.awt.Color(0, 0, 0));
         ButtonHorario.setText("Horario");
@@ -93,7 +93,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        ButtonInstructor.setBackground(new java.awt.Color(204, 255, 255));
+        ButtonInstructor.setBackground(new java.awt.Color(204, 204, 204));
         ButtonInstructor.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         ButtonInstructor.setForeground(new java.awt.Color(0, 0, 0));
         ButtonInstructor.setText("Instructor");
@@ -103,7 +103,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        ButtonRegistro.setBackground(new java.awt.Color(204, 255, 255));
+        ButtonRegistro.setBackground(new java.awt.Color(204, 204, 204));
         ButtonRegistro.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonRegistro.setForeground(new java.awt.Color(0, 0, 0));
         ButtonRegistro.setText("Registrar Cliente");
@@ -117,54 +117,53 @@ public class Menu extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(ButtonUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(ButtonPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(ButtonInstructor, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ButtonDisciplina, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(ButtonHorario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ButtonSucursal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ButtonRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ButtonSucursal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(ButtonRegistro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                            .addComponent(ButtonInstructor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ButtonUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ButtonHorario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ButtonPlan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ButtonDisciplina, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE))))
+                .addGap(15, 15, 15))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
-                .addComponent(ButtonRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(21, 21, 21)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ButtonPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ButtonDisciplina, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonInstructor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ButtonHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(ButtonSucursal, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                    .addComponent(ButtonInstructor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonDisciplina, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ButtonRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                    .addComponent(ButtonHorario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(ButtonSucursal, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 400, 350));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 490, 430));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
         );
 
         pack();
@@ -173,43 +172,43 @@ public class Menu extends javax.swing.JFrame {
     private void ButtonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRegistroActionPerformed
         registro = new Registro();
         registro.setVisible(true);
-        
+
     }//GEN-LAST:event_ButtonRegistroActionPerformed
 
     private void ButtonInstructorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInstructorActionPerformed
         instructor = new Instructor();
         instructor.setVisible(true);
-        
+
     }//GEN-LAST:event_ButtonInstructorActionPerformed
 
     private void ButtonHorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonHorarioActionPerformed
         usuario = new Usuarios();
         usuario.setVisible(true);
-        
+
     }//GEN-LAST:event_ButtonHorarioActionPerformed
 
     private void ButtonSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSucursalActionPerformed
         sucursal = new Sucursal();
         sucursal.setVisible(true);
-        
+
     }//GEN-LAST:event_ButtonSucursalActionPerformed
 
     private void ButtonUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonUsuarioActionPerformed
         usuario = new Usuarios();
         usuario.setVisible(true);
-        
+
     }//GEN-LAST:event_ButtonUsuarioActionPerformed
 
     private void ButtonPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPlanActionPerformed
         plan = new Plan();
         plan.setVisible(true);
-        
+
     }//GEN-LAST:event_ButtonPlanActionPerformed
 
     private void ButtonDisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDisciplinaActionPerformed
         disciplina = new Disciplina();
         disciplina.setVisible(true);
-        
+
     }//GEN-LAST:event_ButtonDisciplinaActionPerformed
 
     /**
@@ -229,20 +228,21 @@ public class Menu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuAdmi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuAdmi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuAdmi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuAdmi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu().setVisible(true);
+                new MenuAdmi().setVisible(true);
             }
         });
     }
