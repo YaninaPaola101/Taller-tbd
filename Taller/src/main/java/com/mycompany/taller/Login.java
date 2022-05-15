@@ -35,27 +35,27 @@ public class Login extends javax.swing.JFrame {
         textUsuario = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         textPasword = new javax.swing.JPasswordField();
-        buttonLogin = new javax.swing.JButton();
+        ButtonEntrarLogin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(84, 81, 81));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Usuario:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Contrasenia:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
-        textUsuario.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(textUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 160, 30));
+        textUsuario.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(textUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 160, 30));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -63,19 +63,19 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setText("LOGIN");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 80, 40));
 
-        textPasword.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(textPasword, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 160, 30));
+        textPasword.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(textPasword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 160, 30));
 
-        buttonLogin.setBackground(new java.awt.Color(204, 255, 255));
-        buttonLogin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        buttonLogin.setForeground(new java.awt.Color(0, 0, 0));
-        buttonLogin.setText("Entrar");
-        buttonLogin.addActionListener(new java.awt.event.ActionListener() {
+        ButtonEntrarLogin.setBackground(new java.awt.Color(204, 204, 204));
+        ButtonEntrarLogin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ButtonEntrarLogin.setForeground(new java.awt.Color(0, 0, 0));
+        ButtonEntrarLogin.setText("Entrar");
+        ButtonEntrarLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonLoginActionPerformed(evt);
+                ButtonEntrarLoginActionPerformed(evt);
             }
         });
-        jPanel1.add(buttonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 110, 40));
+        jPanel1.add(ButtonEntrarLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 150, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -91,7 +91,7 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginActionPerformed
+    private void ButtonEntrarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEntrarLoginActionPerformed
         String usuario = textUsuario.getText();
         String contrasenia = textPasword.getText();
         LoginModel actualLogin = LoginDAO.getLogin(new LoginModel(usuario, contrasenia,0));
@@ -113,13 +113,13 @@ public class Login extends javax.swing.JFrame {
                 LoginDAO.guardarSesion();
                 dispose();
                 if(rolModel.nombreRol.equals("instructor")){
-                    new Instructor().setVisible(true);
+                    new MenuInstructor().setVisible(true);
                 }
                 if(rolModel.nombreRol.equals("administrador")){
-                    new Menu().setVisible(true);
+                    new MenuAdmi().setVisible(true);
                 }
                 if(rolModel.nombreRol.equals("usuario")){
-                    new Horario().setVisible(true);
+                    new MenuCliente().setVisible(true);
                 }
             } else {
                 JOptionPane.showMessageDialog(this,
@@ -128,7 +128,7 @@ public class Login extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this,
                     "Login fallido");
-    }//GEN-LAST:event_buttonLoginActionPerformed
+    }//GEN-LAST:event_ButtonEntrarLoginActionPerformed
     }
     
     public static void main(String args[]) {
@@ -164,7 +164,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonLogin;
+    private javax.swing.JButton ButtonEntrarLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -29,20 +29,24 @@ public class Plan extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TablePlan = new javax.swing.JTable();
+        ButtonRegistrarPlan = new javax.swing.JButton();
+        ButtonActualizarPlan = new javax.swing.JButton();
+        ButtonEditarPlan = new javax.swing.JButton();
+        ButtonEliminarPlan = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(84, 81, 81));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("PLAN");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
+        jLabel1.setText("Planes");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, -1));
 
-        jTable1.setBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TablePlan.setBackground(new java.awt.Color(204, 204, 204));
+        TablePlan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -59,20 +63,46 @@ public class Plan extends javax.swing.JFrame {
                 "Nombre", "Costo"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TablePlan);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 370, 270));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 440, 310));
+
+        ButtonRegistrarPlan.setBackground(new java.awt.Color(204, 204, 204));
+        ButtonRegistrarPlan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ButtonRegistrarPlan.setForeground(new java.awt.Color(0, 0, 0));
+        ButtonRegistrarPlan.setText("Registrar Plan");
+        jPanel1.add(ButtonRegistrarPlan, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, 140, 30));
+
+        ButtonActualizarPlan.setBackground(new java.awt.Color(204, 204, 204));
+        ButtonActualizarPlan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ButtonActualizarPlan.setForeground(new java.awt.Color(0, 0, 0));
+        ButtonActualizarPlan.setText("Actualizar");
+        jPanel1.add(ButtonActualizarPlan, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, 110, 30));
+
+        ButtonEditarPlan.setBackground(new java.awt.Color(204, 204, 204));
+        ButtonEditarPlan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ButtonEditarPlan.setForeground(new java.awt.Color(0, 0, 0));
+        ButtonEditarPlan.setText("Editar");
+        jPanel1.add(ButtonEditarPlan, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, 110, 30));
+
+        ButtonEliminarPlan.setBackground(new java.awt.Color(204, 204, 204));
+        ButtonEliminarPlan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ButtonEliminarPlan.setForeground(new java.awt.Color(0, 0, 0));
+        ButtonEliminarPlan.setText("Eliminar");
+        jPanel1.add(ButtonEliminarPlan, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, 110, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -115,9 +145,13 @@ public class Plan extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonActualizarPlan;
+    private javax.swing.JButton ButtonEditarPlan;
+    private javax.swing.JButton ButtonEliminarPlan;
+    private javax.swing.JButton ButtonRegistrarPlan;
+    private javax.swing.JTable TablePlan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

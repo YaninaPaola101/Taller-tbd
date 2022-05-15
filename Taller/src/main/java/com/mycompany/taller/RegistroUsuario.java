@@ -8,12 +8,12 @@ package com.mycompany.taller;
  *
  * @author rybel
  */
-public class Registro extends javax.swing.JFrame {
+public class RegistroUsuario extends javax.swing.JFrame {
 
     /**
      * Creates new form Usuarios
      */
-    public Registro() {
+    public RegistroUsuario() {
         initComponents();
     }
 
@@ -30,21 +30,22 @@ public class Registro extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jRol = new javax.swing.JTextField();
+        textRol = new javax.swing.JTextField();
         textNombre = new javax.swing.JTextField();
         textEdad = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        ButtonAceptar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        textActivo1 = new javax.swing.JTextField();
+        textActivo = new javax.swing.JTextField();
+        ButtonCancelar = new javax.swing.JButton();
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(84, 81, 81));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Rol");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
+        jLabel1.setText("Rol:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -56,56 +57,62 @@ public class Registro extends javax.swing.JFrame {
         jLabel3.setText("Edad:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
 
-        jRol.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 150, -1));
+        textRol.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(textRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 210, 30));
 
-        textNombre.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(textNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 150, -1));
+        textNombre.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(textNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 210, 30));
 
-        textEdad.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(textEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 150, -1));
+        textEdad.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(textEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 210, 30));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("USUARIO");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, -1, -1));
+        jLabel5.setText("Registrar Usuario");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(204, 255, 255));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Registrar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        ButtonAceptar.setBackground(new java.awt.Color(204, 204, 204));
+        ButtonAceptar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ButtonAceptar.setForeground(new java.awt.Color(0, 0, 0));
+        ButtonAceptar.setText("Aceptar");
+        ButtonAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                ButtonAceptarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 140, 40));
+        jPanel1.add(ButtonAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 140, 40));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Activo:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
-        textActivo1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(textActivo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 150, -1));
+        textActivo.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(textActivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 210, 30));
+
+        ButtonCancelar.setBackground(new java.awt.Color(204, 204, 204));
+        ButtonCancelar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ButtonCancelar.setForeground(new java.awt.Color(0, 0, 0));
+        ButtonCancelar.setText("Cancelar");
+        jPanel1.add(ButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 130, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void ButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAceptarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_ButtonAceptarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,36 +131,39 @@ public class Registro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Registro().setVisible(true);
+                new RegistroUsuario().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton ButtonAceptar;
+    private javax.swing.JButton ButtonCancelar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jRol;
-    private javax.swing.JTextField textActivo1;
+    private javax.swing.JTextField textActivo;
     private javax.swing.JTextField textEdad;
     private javax.swing.JTextField textNombre;
+    private javax.swing.JTextField textRol;
     // End of variables declaration//GEN-END:variables
 }
