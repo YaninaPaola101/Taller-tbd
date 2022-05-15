@@ -165,13 +165,17 @@ public class LoginDAO {
     
     public static int getUserId(String nombre, String contrasenia) {
         Connection c = DatabaseConnection.getConnection();
-        String query = "select id_usuario from usuario where nombre = '"+nombre+"' and contrasenia ='" + contrasenia  +"'";
+        String query = "select id_usuario from usuario where nombre = ? and contrasenia = ?";
         System.out.println(query);
         int id = -1;
         try {
             PreparedStatement pstmt = c.prepareStatement(query);
-            pstmt = c.prepareStatement(query);
-            pstmt.executeQuery();
+            pstmt.setString(1, nombre);
+            pstmt.setString(2, contrasenia);
+            ResultSet rs = pstmt.executeQuery();
+            if(rs.next()){
+                id = rs.getInt("id_usuario");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             return -1;

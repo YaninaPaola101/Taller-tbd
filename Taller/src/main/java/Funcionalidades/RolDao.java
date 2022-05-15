@@ -28,21 +28,19 @@ public class RolDao {
         return rolesResponse;
     }
     
-    
-    
+    // modelo insert
     public static void insertarUsuarioRol(boolean activo, int idRol,int idUsuario){
         Connection c = DatabaseConnection.getConnection();
-        String query = "insert into usuario_rol(activo,fecha_desde,fecha_hasta,id_usuario,id_rol) values(?,?,?,?,?)";
+        String query = "insert into usuario_rol(activo,id_usuario,id_rol) values(?,?,?)";
         System.out.println(query);
         try {
             PreparedStatement pstmt = c.prepareStatement(query);
             pstmt.setBoolean(1, activo);
-            pstmt.setDate(2, null);
-            pstmt.setDate(3, null);
-            pstmt.setInt(4, idUsuario);
-            pstmt.setInt(5, idRol);
-            pstmt = c.prepareStatement(query);
-            pstmt.executeQuery();
+            pstmt.setInt(2, idUsuario);
+            pstmt.setInt(3, idRol);
+            pstmt = c.prepareStatement(pstmt.toString());
+            System.out.println(pstmt.toString());
+            pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
             
