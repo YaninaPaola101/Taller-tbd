@@ -1,17 +1,19 @@
 
-package Funcionalidades;
+package model;
 
 
-public class Registro {
+
+public class UsuarioModel {
 
     private String nombre;
+    private String contrasenia;
     private int edad; 
     private boolean activo;
 
-    public Registro() {
+    public UsuarioModel() {
     }
 
-    public Registro(String nombreUsuario, int edad, boolean activo) {
+    public UsuarioModel(String nombreUsuario, int edad, boolean activo) {
         this.nombre = nombreUsuario;
         this.edad = edad;
         

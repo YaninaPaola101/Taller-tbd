@@ -2,7 +2,7 @@
 package com.mycompany.taller;
 
 import Funcionalidades.LoginDAO;
-import Funcionalidades.LoginModel;
+import model.LoginModel;
 import model.UsuarioRolModel;
 import java.util.Date;
 import javax.swing.JOptionPane;

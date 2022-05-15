@@ -1,14 +1,16 @@
 
-package Funcionalidades;
+package model;
 
 
-public class InstructorFun {
+public class InstructorModel {
+    private int id;
     private String nombreInstructor;
 
-    public InstructorFun() {
+    public InstructorModel() {
     }
 
-    public InstructorFun(String nombreInstructor) {
+    public InstructorModel(int id, String nombreInstructor) {
+        this.id = id;
         this.nombreInstructor = nombreInstructor;
     }
 
@@ -18,6 +20,14 @@ public class InstructorFun {
 
     public void setNombreInstructor(String nombreInstructor) {
         this.nombreInstructor = nombreInstructor;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     

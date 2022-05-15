@@ -1,5 +1,6 @@
 
-package Funcionalidades;
+package model;
+
 
 
 public class LoginModel {

@@ -1,16 +1,19 @@
 
-package Funcionalidades;
+package model;
 
 
-public class PlanFun {
 
+public class PlanModel {
+
+    private int id;
     private String nombrePlan;
     private int costo;
 
-    public PlanFun() {
+    public PlanModel() {
     }
 
-    public PlanFun(String nombrePlan, int costo) {
+    public PlanModel(int id, String nombrePlan, int costo) {
+        this.id = id;
         this.nombrePlan = nombrePlan;
         this.costo = costo;
     }
@@ -29,6 +32,14 @@ public class PlanFun {
 
     public void setCosto(int costo) {
         this.costo = costo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     
