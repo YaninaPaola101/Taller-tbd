@@ -80,7 +80,7 @@ public class MenuAdmi extends javax.swing.JFrame {
         ButtonRenovar.setBackground(new java.awt.Color(204, 204, 204));
         ButtonRenovar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         ButtonRenovar.setForeground(new java.awt.Color(0, 0, 0));
-        ButtonRenovar.setText("Renovar Suscripcion");
+        ButtonRenovar.setText("Suscripcion");
         ButtonRenovar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonRenovarActionPerformed(evt);

@@ -4,6 +4,12 @@
  */
 package com.mycompany.taller;
 
+import Funcionalidades.LoginDAO;
+import Funcionalidades.LoginModel;
+import Funcionalidades.RolDao;
+import java.util.ArrayList;
+import model.RolModel;
+
 /**
  *
  * @author rybel
@@ -32,7 +38,7 @@ public class RegistroUsuario extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        textRol = new javax.swing.JTextField();
+        textContrasenia = new javax.swing.JTextField();
         textNombre = new javax.swing.JTextField();
         textEdad = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -40,14 +46,16 @@ public class RegistroUsuario extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         textActivo = new javax.swing.JTextField();
         ButtonCancelar = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         jPanel1.setBackground(new java.awt.Color(84, 81, 81));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Rol:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, -1, -1));
+        jLabel1.setText("Contrasenia:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -59,13 +67,18 @@ public class RegistroUsuario extends javax.swing.JFrame {
         jLabel3.setText("Edad:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
 
-        textRol.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(textRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 210, 30));
+        textContrasenia.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(textContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 210, 30));
 
         textNombre.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.add(textNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 210, 30));
 
         textEdad.setBackground(new java.awt.Color(204, 204, 204));
+        textEdad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textEdadActionPerformed(evt);
+            }
+        });
         jPanel1.add(textEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 210, 30));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
@@ -82,7 +95,7 @@ public class RegistroUsuario extends javax.swing.JFrame {
                 ButtonAceptarActionPerformed(evt);
             }
         });
-        jPanel1.add(ButtonAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 140, 40));
+        jPanel1.add(ButtonAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 140, 40));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -101,29 +114,71 @@ public class RegistroUsuario extends javax.swing.JFrame {
                 ButtonCancelarActionPerformed(evt);
             }
         });
-        jPanel1.add(ButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 130, 40));
+        jPanel1.add(ButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 130, 40));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Rol:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, -1, -1));
+
+        ArrayList<RolModel> roles = RolDao.getAllRoles();
+        RolModel[] rolesModelos = new RolModel[roles.size()];
+        for(int i = 0 ; i<roles.size() ;i++){
+            rolesModelos[i]= roles.get(i);
+        }
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(rolesModelos));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 200, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAceptarActionPerformed
-        // TODO add your handling code here:
+        String nombre = textNombre.getText();
+        String contrasenia = textContrasenia.getText();
+        int edad = Integer.parseInt(textEdad.getText());
+        boolean activo  = textActivo.getText().equals("true")? true :false;
+        LoginModel loginModel = new LoginModel(nombre, contrasenia, edad, activo);
+        LoginDAO.insertarUsuario(loginModel);
+        int idUsuario = LoginDAO.getUserId(nombre, contrasenia);
+        RolModel rolSeleccionado = (RolModel) jComboBox1.getSelectedItem();
+        
+        RolDao.insertarUsuarioRol(activo, rolSeleccionado.getId(), idUsuario);
+
     }//GEN-LAST:event_ButtonAceptarActionPerformed
 
     private void ButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelarActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_ButtonCancelarActionPerformed
+
+    private void textEdadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textEdadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textEdadActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,15 +221,17 @@ public class RegistroUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonAceptar;
     private javax.swing.JButton ButtonCancelar;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField textActivo;
+    private javax.swing.JTextField textContrasenia;
     private javax.swing.JTextField textEdad;
     private javax.swing.JTextField textNombre;
-    private javax.swing.JTextField textRol;
     // End of variables declaration//GEN-END:variables
 }

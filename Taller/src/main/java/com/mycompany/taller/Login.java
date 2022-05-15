@@ -3,7 +3,7 @@ package com.mycompany.taller;
 
 import Funcionalidades.LoginDAO;
 import Funcionalidades.LoginModel;
-import Funcionalidades.RolModel;
+import model.UsuarioRolModel;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
@@ -96,10 +96,10 @@ public class Login extends javax.swing.JFrame {
     private void ButtonEntrarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEntrarLoginActionPerformed
         String usuario = textUsuario.getText();
         String contrasenia = textPasword.getText();
-        LoginModel actualLogin = LoginDAO.getLogin(new LoginModel(usuario, contrasenia,0));
+        LoginModel actualLogin = LoginDAO.getLogin(new LoginModel(usuario, contrasenia,0,false));
         
         if (actualLogin != null) {
-            RolModel rolModel = LoginDAO.getRol(actualLogin.id);
+            UsuarioRolModel rolModel = LoginDAO.getRol(actualLogin.id);
             if(rolModel != null ){
                 if(!rolModel.activo ){
                      JOptionPane.showMessageDialog(this,
