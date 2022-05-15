@@ -15,6 +15,8 @@ public class MenuCliente extends javax.swing.JFrame {
      */
     public MenuCliente() {
         initComponents();
+        this.setLocationRelativeTo(null); 
+        this.setResizable(false);
     }
 
     /**

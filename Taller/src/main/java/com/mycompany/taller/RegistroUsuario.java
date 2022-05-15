@@ -15,6 +15,8 @@ public class RegistroUsuario extends javax.swing.JFrame {
      */
     public RegistroUsuario() {
         initComponents();
+        this.setLocationRelativeTo(null); 
+        this.setResizable(false);
     }
 
     /**
@@ -94,6 +96,11 @@ public class RegistroUsuario extends javax.swing.JFrame {
         ButtonCancelar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonCancelar.setForeground(new java.awt.Color(0, 0, 0));
         ButtonCancelar.setText("Cancelar");
+        ButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonCancelarActionPerformed(evt);
+            }
+        });
         jPanel1.add(ButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 130, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -113,6 +120,10 @@ public class RegistroUsuario extends javax.swing.JFrame {
     private void ButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAceptarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonAceptarActionPerformed
+
+    private void ButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelarActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_ButtonCancelarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -15,6 +15,8 @@ public class AgregarClase extends javax.swing.JFrame {
      */
     public AgregarClase() {
         initComponents();
+        this.setLocationRelativeTo(null); 
+        this.setResizable(false);
     }
 
     /**
@@ -74,6 +76,11 @@ public class AgregarClase extends javax.swing.JFrame {
         ButtonCancelarClase.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonCancelarClase.setForeground(new java.awt.Color(0, 0, 0));
         ButtonCancelarClase.setText("Cancelar");
+        ButtonCancelarClase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonCancelarClaseActionPerformed(evt);
+            }
+        });
         jPanel1.add(ButtonCancelarClase, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 130, 40));
 
         ComboBoxNombre.setBackground(new java.awt.Color(204, 204, 204));
@@ -114,6 +121,10 @@ public class AgregarClase extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ButtonCancelarClaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelarClaseActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_ButtonCancelarClaseActionPerformed
 
     /**
      * @param args the command line arguments

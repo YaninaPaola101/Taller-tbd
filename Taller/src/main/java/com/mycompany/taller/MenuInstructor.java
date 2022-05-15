@@ -15,6 +15,8 @@ public class MenuInstructor extends javax.swing.JFrame {
      */
     public MenuInstructor() {
         initComponents();
+        this.setLocationRelativeTo(null); 
+        this.setResizable(false);
     }
 
     /**

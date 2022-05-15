@@ -15,6 +15,8 @@ public class Renovar extends javax.swing.JFrame {
      */
     public Renovar() {
         initComponents();
+        this.setLocationRelativeTo(null); 
+        this.setResizable(false);
     }
 
     /**
@@ -103,6 +105,11 @@ public class Renovar extends javax.swing.JFrame {
         ButtonCancelar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonCancelar.setForeground(new java.awt.Color(0, 0, 0));
         ButtonCancelar.setText("Cancelar");
+        ButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonCancelarActionPerformed(evt);
+            }
+        });
         jPanel1.add(ButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 140, 30));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -136,6 +143,10 @@ public class Renovar extends javax.swing.JFrame {
     private void ButtonBuscarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBuscarPlanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonBuscarPlanActionPerformed
+
+    private void ButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelarActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_ButtonCancelarActionPerformed
 
     /**
      * @param args the command line arguments

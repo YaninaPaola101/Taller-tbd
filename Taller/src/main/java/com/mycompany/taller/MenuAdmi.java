@@ -17,8 +17,11 @@ public class MenuAdmi extends javax.swing.JFrame {
     private Plan plan;
     private RegistroUsuario registro;
     private Sucursal sucursal;
+    private Renovar renovar;
     public MenuAdmi() {
         initComponents();
+        this.setLocationRelativeTo(null); 
+        this.setResizable(false);
     }
     
     @SuppressWarnings("unchecked")
@@ -77,7 +80,7 @@ public class MenuAdmi extends javax.swing.JFrame {
         ButtonRenovar.setBackground(new java.awt.Color(204, 204, 204));
         ButtonRenovar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         ButtonRenovar.setForeground(new java.awt.Color(0, 0, 0));
-        ButtonRenovar.setText("Renovar");
+        ButtonRenovar.setText("Renovar Suscripcion");
         ButtonRenovar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonRenovarActionPerformed(evt);
@@ -108,11 +111,21 @@ public class MenuAdmi extends javax.swing.JFrame {
         ButtonSucursal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonSucursal.setForeground(new java.awt.Color(0, 0, 0));
         ButtonSucursal.setText("Sucursal");
+        ButtonSucursal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonSucursalActionPerformed(evt);
+            }
+        });
 
         ButtonCerrarSesion.setBackground(new java.awt.Color(204, 204, 204));
         ButtonCerrarSesion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonCerrarSesion.setForeground(new java.awt.Color(0, 0, 0));
         ButtonCerrarSesion.setText("Cerrar sesion");
+        ButtonCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonCerrarSesionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -180,15 +193,13 @@ public class MenuAdmi extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonInstructorActionPerformed
 
     private void ButtonHorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonHorarioActionPerformed
-        usuario = new Usuarios();
-        usuario.setVisible(true);
-
+       horario = new Horario();
+       horario.setVisible(true);
     }//GEN-LAST:event_ButtonHorarioActionPerformed
 
     private void ButtonRenovarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRenovarActionPerformed
-        sucursal = new Sucursal();
-        sucursal.setVisible(true);
-
+        renovar = new Renovar();
+        renovar.setVisible(true);
     }//GEN-LAST:event_ButtonRenovarActionPerformed
 
     private void ButtonUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonUsuarioActionPerformed
@@ -197,17 +208,26 @@ public class MenuAdmi extends javax.swing.JFrame {
 
     }//GEN-LAST:event_ButtonUsuarioActionPerformed
 
-    private void ButtonPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPlanActionPerformed
-        plan = new Plan();
-        plan.setVisible(true);
-
-    }//GEN-LAST:event_ButtonPlanActionPerformed
-
     private void ButtonDisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDisciplinaActionPerformed
         disciplina = new Disciplinas();
         disciplina.setVisible(true);
 
     }//GEN-LAST:event_ButtonDisciplinaActionPerformed
+
+    private void ButtonSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSucursalActionPerformed
+        sucursal = new Sucursal();
+        sucursal.setVisible(true);
+    }//GEN-LAST:event_ButtonSucursalActionPerformed
+
+    private void ButtonPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPlanActionPerformed
+        plan = new Plan();
+        plan.setVisible(true);
+    }//GEN-LAST:event_ButtonPlanActionPerformed
+
+    private void ButtonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCerrarSesionActionPerformed
+        this.setVisible(false);
+        new Login().setVisible(true);
+    }//GEN-LAST:event_ButtonCerrarSesionActionPerformed
 
     /**
      * @param args the command line arguments

@@ -15,6 +15,8 @@ public class Instructor extends javax.swing.JFrame {
      */
     public Instructor() {
         initComponents();
+        this.setLocationRelativeTo(null); 
+        this.setResizable(false);
     }
 
     /**
@@ -34,6 +36,7 @@ public class Instructor extends javax.swing.JFrame {
         ButtonActualizarInstructor = new javax.swing.JButton();
         ButtonEditarInstructor = new javax.swing.JButton();
         ButtonEliminarInstructor = new javax.swing.JButton();
+        ButtonMenuPrincipal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,7 +78,12 @@ public class Instructor extends javax.swing.JFrame {
         ButtonRegistrarInstructor.setBackground(new java.awt.Color(204, 204, 204));
         ButtonRegistrarInstructor.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ButtonRegistrarInstructor.setForeground(new java.awt.Color(0, 0, 0));
-        ButtonRegistrarInstructor.setText("Registrar Cliente");
+        ButtonRegistrarInstructor.setText("Registrar Usuario");
+        ButtonRegistrarInstructor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonRegistrarInstructorActionPerformed(evt);
+            }
+        });
         jPanel1.add(ButtonRegistrarInstructor, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, 130, 30));
 
         ButtonActualizarInstructor.setBackground(new java.awt.Color(204, 204, 204));
@@ -96,6 +104,17 @@ public class Instructor extends javax.swing.JFrame {
         ButtonEliminarInstructor.setText("Eliminar");
         jPanel1.add(ButtonEliminarInstructor, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, 110, 30));
 
+        ButtonMenuPrincipal.setBackground(new java.awt.Color(204, 204, 204));
+        ButtonMenuPrincipal.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ButtonMenuPrincipal.setForeground(new java.awt.Color(0, 0, 0));
+        ButtonMenuPrincipal.setText("Menu Principal");
+        ButtonMenuPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonMenuPrincipalActionPerformed(evt);
+            }
+        });
+        jPanel1.add(ButtonMenuPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, 120, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -111,6 +130,15 @@ public class Instructor extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ButtonRegistrarInstructorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRegistrarInstructorActionPerformed
+        this.setVisible(true);
+        new RegistroUsuario().setVisible(true);
+    }//GEN-LAST:event_ButtonRegistrarInstructorActionPerformed
+
+    private void ButtonMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMenuPrincipalActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_ButtonMenuPrincipalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,6 +179,7 @@ public class Instructor extends javax.swing.JFrame {
     private javax.swing.JButton ButtonActualizarInstructor;
     private javax.swing.JButton ButtonEditarInstructor;
     private javax.swing.JButton ButtonEliminarInstructor;
+    private javax.swing.JButton ButtonMenuPrincipal;
     private javax.swing.JButton ButtonRegistrarInstructor;
     private javax.swing.JTable TableInstructor;
     private javax.swing.JLabel jLabel1;

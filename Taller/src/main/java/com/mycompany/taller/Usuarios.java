@@ -10,11 +10,11 @@ package com.mycompany.taller;
  */
 public class Usuarios extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Usuarios
-     */
+    private RegistroUsuario registro;
     public Usuarios() {
         initComponents();
+        this.setLocationRelativeTo(null); 
+        this.setResizable(false);
     }
 
     /**
@@ -34,6 +34,7 @@ public class Usuarios extends javax.swing.JFrame {
         ButtonRegistrarCliente = new javax.swing.JButton();
         ButtonEditarUsuario = new javax.swing.JButton();
         ButtonEliminarUsuario = new javax.swing.JButton();
+        ButtonMenuPrincipal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,6 +78,11 @@ public class Usuarios extends javax.swing.JFrame {
         ButtonRegistrarCliente.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ButtonRegistrarCliente.setForeground(new java.awt.Color(0, 0, 0));
         ButtonRegistrarCliente.setText("Registrar Cliente");
+        ButtonRegistrarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonRegistrarClienteActionPerformed(evt);
+            }
+        });
         jPanel1.add(ButtonRegistrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 130, 40));
 
         ButtonEditarUsuario.setBackground(new java.awt.Color(204, 204, 204));
@@ -90,6 +96,17 @@ public class Usuarios extends javax.swing.JFrame {
         ButtonEliminarUsuario.setForeground(new java.awt.Color(0, 0, 0));
         ButtonEliminarUsuario.setText("Eliminar");
         jPanel1.add(ButtonEliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 110, 40));
+
+        ButtonMenuPrincipal.setBackground(new java.awt.Color(204, 204, 204));
+        ButtonMenuPrincipal.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ButtonMenuPrincipal.setForeground(new java.awt.Color(0, 0, 0));
+        ButtonMenuPrincipal.setText("Menu Principal");
+        ButtonMenuPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonMenuPrincipalActionPerformed(evt);
+            }
+        });
+        jPanel1.add(ButtonMenuPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, 120, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,6 +125,16 @@ public class Usuarios extends javax.swing.JFrame {
     private void ButtonActualizarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonActualizarUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonActualizarUsuarioActionPerformed
+
+    private void ButtonRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRegistrarClienteActionPerformed
+        registro = new RegistroUsuario();
+        registro.setVisible(true);
+    }//GEN-LAST:event_ButtonRegistrarClienteActionPerformed
+
+    private void ButtonMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMenuPrincipalActionPerformed
+        this.setVisible(false);
+    
+    }//GEN-LAST:event_ButtonMenuPrincipalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,6 +175,7 @@ public class Usuarios extends javax.swing.JFrame {
     private javax.swing.JButton ButtonActualizarUsuario;
     private javax.swing.JButton ButtonEditarUsuario;
     private javax.swing.JButton ButtonEliminarUsuario;
+    private javax.swing.JButton ButtonMenuPrincipal;
     private javax.swing.JButton ButtonRegistrarCliente;
     private javax.swing.JTable TableUsuarios;
     private javax.swing.JLabel jLabel1;

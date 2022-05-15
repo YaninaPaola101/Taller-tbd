@@ -15,6 +15,8 @@ public class RegistrarPlan extends javax.swing.JFrame {
      */
     public RegistrarPlan() {
         initComponents();
+        this.setLocationRelativeTo(null); 
+        this.setResizable(false);
     }
 
     /**
@@ -93,6 +95,11 @@ public class RegistrarPlan extends javax.swing.JFrame {
         ButtonCancelar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonCancelar.setForeground(new java.awt.Color(0, 0, 0));
         ButtonCancelar.setText("Cancelar");
+        ButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonCancelarActionPerformed(evt);
+            }
+        });
         jPanel1.add(ButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 130, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -108,6 +115,10 @@ public class RegistrarPlan extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelarActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_ButtonCancelarActionPerformed
 
     /**
      * @param args the command line arguments

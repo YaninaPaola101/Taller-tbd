@@ -15,6 +15,8 @@ public class Plan extends javax.swing.JFrame {
      */
     public Plan() {
         initComponents();
+        this.setLocationRelativeTo(null); 
+        this.setResizable(false);
     }
 
     /**
@@ -34,6 +36,7 @@ public class Plan extends javax.swing.JFrame {
         ButtonActualizarPlan = new javax.swing.JButton();
         ButtonEditarPlan = new javax.swing.JButton();
         ButtonEliminarPlan = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,6 +74,11 @@ public class Plan extends javax.swing.JFrame {
         ButtonRegistrarPlan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ButtonRegistrarPlan.setForeground(new java.awt.Color(0, 0, 0));
         ButtonRegistrarPlan.setText("Registrar Plan");
+        ButtonRegistrarPlan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonRegistrarPlanActionPerformed(evt);
+            }
+        });
         jPanel1.add(ButtonRegistrarPlan, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, 140, 30));
 
         ButtonActualizarPlan.setBackground(new java.awt.Color(204, 204, 204));
@@ -91,6 +99,17 @@ public class Plan extends javax.swing.JFrame {
         ButtonEliminarPlan.setText("Eliminar");
         jPanel1.add(ButtonEliminarPlan, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, 110, 30));
 
+        jButton1.setBackground(new java.awt.Color(204, 204, 204));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setText("Menu Principal");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 260, 120, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -108,6 +127,15 @@ public class Plan extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ButtonRegistrarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRegistrarPlanActionPerformed
+        this.setVisible(true);
+        new RegistrarPlan().setVisible(true);
+    }//GEN-LAST:event_ButtonRegistrarPlanActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,6 +178,7 @@ public class Plan extends javax.swing.JFrame {
     private javax.swing.JButton ButtonEliminarPlan;
     private javax.swing.JButton ButtonRegistrarPlan;
     private javax.swing.JTable TablePlan;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
