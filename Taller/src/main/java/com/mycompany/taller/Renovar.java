@@ -113,6 +113,7 @@ public class Renovar extends javax.swing.JFrame {
         SuscripcionModel sus = new SuscripcionModel(id, plan.getNombrePlan());
         sus.setPlan(plan.getNombrePlan());
         SuscripcionDao.insertarSuscripcion(id, plan.getNombrePlan());
+        textCodigo.setText("");
     }//GEN-LAST:event_ButtonGuardarActionPerformed
 
    

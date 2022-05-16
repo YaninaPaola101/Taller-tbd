@@ -18,7 +18,10 @@ public class RegistrarDisciplina extends javax.swing.JFrame {
         this.setLocationRelativeTo(null); 
         this.setResizable(false);
     }
-
+    private void limpiarDisciplina(){
+        textNombre.setText("");
+        textInstructor.setText("");
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -105,6 +108,11 @@ public class RegistrarDisciplina extends javax.swing.JFrame {
         ButtonAceptar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonAceptar.setForeground(new java.awt.Color(0, 0, 0));
         ButtonAceptar.setText("Aceptar");
+        ButtonAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonAceptarActionPerformed(evt);
+            }
+        });
         jPanel1.add(ButtonAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 140, 30));
 
         ButtonCancelar.setBackground(new java.awt.Color(204, 204, 204));
@@ -139,6 +147,11 @@ public class RegistrarDisciplina extends javax.swing.JFrame {
     private void ButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelarActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_ButtonCancelarActionPerformed
+
+    private void ButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAceptarActionPerformed
+        // TODO add your handling code here:
+        limpiarDisciplina();
+    }//GEN-LAST:event_ButtonAceptarActionPerformed
 
     /**
      * @param args the command line arguments

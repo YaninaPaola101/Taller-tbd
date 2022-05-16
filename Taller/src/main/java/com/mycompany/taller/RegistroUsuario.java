@@ -17,7 +17,12 @@ public class RegistroUsuario extends javax.swing.JFrame {
         this.setResizable(false);
     }
 
-    
+    private void limpiarUsuario(){
+        textNombre.setText("");
+        textContrasenia.setText("");
+        textEdad.setText("");
+        textActivo.setText("");
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -149,7 +154,7 @@ public class RegistroUsuario extends javax.swing.JFrame {
         RolModel rolSeleccionado = (RolModel) ComboBoxRol.getSelectedItem();
         
         RolDao.insertarUsuarioRol(activo, rolSeleccionado.getId(), idUsuario);
-
+        limpiarUsuario();
     }//GEN-LAST:event_ButtonAceptarActionPerformed
 
     private void ButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelarActionPerformed

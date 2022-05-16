@@ -14,7 +14,10 @@ public class RegistrarPlan extends javax.swing.JFrame {
         this.setResizable(false);
     }
 
-    
+    private void limpiarPlan(){
+        textNombre.setText("");
+        textCosto.setText("");
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -112,6 +115,7 @@ public class RegistrarPlan extends javax.swing.JFrame {
         int meses = (Integer) ComboBoxMeses.getSelectedItem();
         planMo.setMeses(meses);
         PlanDao.registrarPlan(planMo);
+        limpiarPlan();
     }//GEN-LAST:event_ButtonAceptarActionPerformed
 
     

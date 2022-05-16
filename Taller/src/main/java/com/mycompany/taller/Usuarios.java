@@ -138,7 +138,7 @@ public class Usuarios extends javax.swing.JFrame {
         TableUsuarios.setModel(usuario);
     }
     private void ButtonActualizarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonActualizarUsuarioActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_ButtonActualizarUsuarioActionPerformed
 
     private void ButtonRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRegistrarClienteActionPerformed

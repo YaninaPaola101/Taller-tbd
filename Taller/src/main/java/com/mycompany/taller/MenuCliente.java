@@ -10,9 +10,9 @@ package com.mycompany.taller;
  */
 public class MenuCliente extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MenuCliente
-     */
+    private Horario horario;
+    private Disciplinas disciplina;
+    private Sucursal sucursal;
     public MenuCliente() {
         initComponents();
         this.setLocationRelativeTo(null); 
@@ -115,17 +115,20 @@ public class MenuCliente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ButtonSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSucursalActionPerformed
-        
-    }//GEN-LAST:event_ButtonSucursalActionPerformed
-
     private void ButtonHorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonHorarioActionPerformed
-        // TODO add your handling code here:
+        horario = new Horario();
+        horario.setVisible(true);
     }//GEN-LAST:event_ButtonHorarioActionPerformed
 
     private void ButtonDisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDisciplinaActionPerformed
-        // TODO add your handling code here:
+        disciplina = new Disciplinas();
+        disciplina.setVisible(true);
     }//GEN-LAST:event_ButtonDisciplinaActionPerformed
+
+    private void ButtonSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSucursalActionPerformed
+         sucursal = new Sucursal();
+         sucursal.setVisible(true);
+    }//GEN-LAST:event_ButtonSucursalActionPerformed
 
     /**
      * @param args the command line arguments
