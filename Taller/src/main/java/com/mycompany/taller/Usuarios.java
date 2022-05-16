@@ -125,6 +125,7 @@ public class Usuarios extends javax.swing.JFrame {
         ArrayList<UsuarioModel> listaUsuario=new ArrayList();
         listaUsuario = usu.listarUsuarios();
         usuario = (DefaultTableModel) TableUsuarios.getModel();
+        usuario.setRowCount(0);
         Object[] ob = new Object[5];
         for(int i=0; i<listaUsuario.size(); i++){
             ob[0]=listaUsuario.get(i).getId();

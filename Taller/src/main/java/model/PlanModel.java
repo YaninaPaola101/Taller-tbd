@@ -8,14 +8,16 @@ public class PlanModel {
     private int id;
     private String nombrePlan;
     private int costo;
+    private int meses;
 
     public PlanModel() {
     }
 
-    public PlanModel(int id, String nombrePlan, int costo) {
-        this.id = id;
+    public PlanModel(String nombrePlan, int costo) {
+        
         this.nombrePlan = nombrePlan;
         this.costo = costo;
+       
     }
 
     public String getNombrePlan() {
@@ -40,6 +42,14 @@ public class PlanModel {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getMeses() {
+        return meses;
+    }
+
+    public void setMeses(int meses) {
+        this.meses = meses;
     }
     
     

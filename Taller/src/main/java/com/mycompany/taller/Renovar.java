@@ -33,16 +33,12 @@ public class Renovar extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        textNombre = new javax.swing.JTextField();
-        ComboBoxDiaDesde = new javax.swing.JComboBox<>();
-        ComboBoxMesDesde = new javax.swing.JComboBox<>();
-        ComboBoxDiaHasta = new javax.swing.JComboBox<>();
-        ButtonBuscarPlan = new javax.swing.JButton();
+        textCodigo = new javax.swing.JTextField();
+        ComboBoxPlan = new javax.swing.JComboBox<>();
+        ComboBoxMeses = new javax.swing.JComboBox<>();
         ButtonGuardar = new javax.swing.JButton();
         ButtonCancelar = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        ButtonBuscar = new javax.swing.JButton();
-        ComboBoxMesHasta = new javax.swing.JComboBox<>();
+        LabelInformacion = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,44 +52,29 @@ public class Renovar extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Nombre:");
+        jLabel2.setText("Codigo:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, 30));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Desde:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, 30));
+        jLabel3.setText("Plan:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, 30));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Hasta:");
+        jLabel4.setText("Meses:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, 30));
 
-        textNombre.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(textNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 170, 30));
+        textCodigo.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(textCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 230, 30));
 
-        ComboBoxDiaDesde.setBackground(new java.awt.Color(204, 204, 204));
-        ComboBoxDiaDesde.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(ComboBoxDiaDesde, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 70, 30));
+        ComboBoxPlan.setBackground(new java.awt.Color(204, 204, 204));
+        ComboBoxPlan.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(ComboBoxPlan, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 230, 30));
 
-        ComboBoxMesDesde.setBackground(new java.awt.Color(204, 204, 204));
-        ComboBoxMesDesde.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(ComboBoxMesDesde, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 80, 30));
-
-        ComboBoxDiaHasta.setBackground(new java.awt.Color(204, 204, 204));
-        ComboBoxDiaHasta.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(ComboBoxDiaHasta, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 70, 30));
-
-        ButtonBuscarPlan.setBackground(new java.awt.Color(204, 204, 204));
-        ButtonBuscarPlan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        ButtonBuscarPlan.setForeground(new java.awt.Color(0, 0, 0));
-        ButtonBuscarPlan.setText("Buscar Plan");
-        ButtonBuscarPlan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonBuscarPlanActionPerformed(evt);
-            }
-        });
-        jPanel1.add(ButtonBuscarPlan, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, -1, 80));
+        ComboBoxMeses.setBackground(new java.awt.Color(204, 204, 204));
+        ComboBoxMeses.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(ComboBoxMeses, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 230, 30));
 
         ButtonGuardar.setBackground(new java.awt.Color(204, 204, 204));
         ButtonGuardar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -112,19 +93,10 @@ public class Renovar extends javax.swing.JFrame {
         });
         jPanel1.add(ButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 140, 30));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Informacion");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 360, 40));
-
-        ButtonBuscar.setBackground(new java.awt.Color(204, 204, 204));
-        ButtonBuscar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        ButtonBuscar.setForeground(new java.awt.Color(0, 0, 0));
-        ButtonBuscar.setText("Buscar");
-        jPanel1.add(ButtonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 110, 30));
-
-        ComboBoxMesHasta.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(ComboBoxMesHasta, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 80, 30));
+        LabelInformacion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LabelInformacion.setForeground(new java.awt.Color(255, 255, 255));
+        LabelInformacion.setText("Informacion");
+        jPanel1.add(LabelInformacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 360, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -139,10 +111,6 @@ public class Renovar extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void ButtonBuscarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBuscarPlanActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonBuscarPlanActionPerformed
 
     private void ButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelarActionPerformed
         this.setVisible(false);
@@ -184,20 +152,16 @@ public class Renovar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ButtonBuscar;
-    private javax.swing.JButton ButtonBuscarPlan;
     private javax.swing.JButton ButtonCancelar;
     private javax.swing.JButton ButtonGuardar;
-    private javax.swing.JComboBox<String> ComboBoxDiaDesde;
-    private javax.swing.JComboBox<String> ComboBoxDiaHasta;
-    private javax.swing.JComboBox<String> ComboBoxMesDesde;
-    private javax.swing.JComboBox<String> ComboBoxMesHasta;
+    private javax.swing.JComboBox<String> ComboBoxMeses;
+    private javax.swing.JComboBox<String> ComboBoxPlan;
+    private javax.swing.JLabel LabelInformacion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField textNombre;
+    private javax.swing.JTextField textCodigo;
     // End of variables declaration//GEN-END:variables
 }

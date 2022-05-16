@@ -51,19 +51,20 @@ public class Plan extends javax.swing.JFrame {
         TablePlan.setBackground(new java.awt.Color(204, 204, 204));
         TablePlan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Nombre", "Costo"
+                "Id", "Nombre", "Meses", "Costo"
             }
         ));
         jScrollPane1.setViewportView(TablePlan);
