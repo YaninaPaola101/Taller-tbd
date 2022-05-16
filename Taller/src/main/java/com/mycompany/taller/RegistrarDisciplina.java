@@ -1,18 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package com.mycompany.taller;
 
-/**
- *
- * @author rybel
- */
+
 public class RegistrarDisciplina extends javax.swing.JFrame {
 
-    /**
-     * Creates new form RegistrarDisciplina
-     */
+    
     public RegistrarDisciplina() {
         initComponents();
         this.setLocationRelativeTo(null); 

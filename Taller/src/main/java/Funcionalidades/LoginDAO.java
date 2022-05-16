@@ -48,12 +48,13 @@ public class LoginDAO {
         }
         return pid;
     }
-
+    
     public static LoginModel getLogin(LoginModel login) {
         Connection c = DatabaseConnection.getConnection();
         String query = "SELECT * FROM public.usuario" +
                 " where nombre='" + login.usuario + "'" +
                 " and contrasenia='" + login.contrasenia + "'";
+        System.out.println(query);
         LoginModel loginResponse = null;
         try {
             System.out.println(query);
@@ -64,12 +65,14 @@ public class LoginDAO {
                                         rs.getString("contrasenia"),
                                         rs.getInt("edad"),
                                         rs.getBoolean("activo"));
+                loginResponse.setId(rs.getInt("id_usuario"));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return loginResponse;
     }
+
 
     public static boolean insertarLoginStoreProcedures(LoginModel login) {
         Connection c = DatabaseConnection.getConnection();
@@ -86,24 +89,22 @@ public class LoginDAO {
         return true;
     }
 
-//    public static LoginModel getLoginStoredProcedures(LoginModel login) {
-//        Connection c = DatabaseConnection.getConnection();
-//        String query = "CALL buscar_login('" + login.usuario + "','" + login.contrasenia + "')";
-//        LoginModel loginResponse = null;
-//        System.out.println(query);
-//        try {
-//            Statement stat = c.createStatement();
-//            ResultSet rs = stat.executeQuery(query);
-//            if (rs.next()) {
-//                loginResponse = new LoginModel(rs.getString("usuario"),
-//                        rs.getString("contrasenia"),
-//                        rs.getInt("id_usuario"));
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return loginResponse;
-//    }
+    public static int getLoginStoredProcedures(LoginModel login) {
+        Connection c = DatabaseConnection.getConnection();
+        String query = "CALL performLogin('" + login.usuario + "','" + login.contrasenia + "')";
+        int id = -1;
+        System.out.println(query);
+        try {
+            Statement stat = c.createStatement();
+            ResultSet rs = stat.executeQuery(query);
+            if (rs.next()) {
+                id = rs.getInt("user_id");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return id;
+    }
     
     public static void guardarSesion(){
         DatabaseConnection.closeConnection();

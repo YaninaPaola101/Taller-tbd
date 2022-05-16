@@ -95,6 +95,11 @@ public class Plan extends javax.swing.JFrame {
         ButtonActualizarPlan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonActualizarPlan.setForeground(new java.awt.Color(0, 0, 0));
         ButtonActualizarPlan.setText("Actualizar");
+        ButtonActualizarPlan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonActualizarPlanActionPerformed(evt);
+            }
+        });
         jPanel1.add(ButtonActualizarPlan, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, 110, 30));
 
         ButtonEditarPlan.setBackground(new java.awt.Color(204, 204, 204));
@@ -146,6 +151,10 @@ public class Plan extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void ButtonActualizarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonActualizarPlanActionPerformed
+        listarPlan();
+    }//GEN-LAST:event_ButtonActualizarPlanActionPerformed
 
     
     public static void main(String args[]) {

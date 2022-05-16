@@ -16,7 +16,8 @@ public class InstructorDao {
     public  ArrayList<UsuarioModel> listaInstructor() {
         Connection c = DatabaseConnection.getConnection();
         String query = "select u.nombre, r.nombre from usuario u, rol r, Usuario_Rol ur\n" +
-                       "where r.id_rol = ur.id_rol and u.id_usuario = ur.id_usuario and r.nombre = 'Instructor';";
+                       "where r.id_rol = ur.id_rol and u.id_usuario = ur.id_usuario and r.nombre = 'instructor';";
+        System.out.println(query);
         ArrayList listInstructor = new ArrayList<UsuarioModel>();
         try {
             Statement stat = c.createStatement();

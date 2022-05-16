@@ -16,6 +16,7 @@ public class UsuarioDao {
         Connection c = DatabaseConnection.getConnection();
         String query = "select u.id_usuario, u.nombre, u.edad, u.activo, r.nombre from usuario u, rol r, Usuario_Rol ur\n" +
                         "where r.id_rol = ur.id_rol and u.id_usuario = ur.id_usuario;";
+        System.out.println(query);
         ArrayList listarUsuarios = new ArrayList<UsuarioModel>();
         try {
             Statement stat = c.createStatement();

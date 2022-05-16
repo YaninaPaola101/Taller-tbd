@@ -6,22 +6,25 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import model.PlanModel;
 import model.RolModel;
 
 
 public class SuscripcionDao {
     
-    public static void insertarSuscripcion(int id, String plan){
+    public static void insertarSuscripcion(int idPlan, int idUsuario){
         Connection c = DatabaseConnection.getConnection();
-        String query = "INSERT INTO public.renovar(id_renovar, plan)\n" +
+        String query = "INSERT INTO public.renovar(id_plan, id_usuario)\n" +
                         "VALUES (?, ?);";
         System.out.println(query);
+        
         try {
             PreparedStatement pstmt = c.prepareStatement(query);
-            pstmt.setInt(1, id);
-            pstmt.setString(2, plan);
+            pstmt.setInt(1, idPlan);
+            pstmt.setInt(2, idUsuario);
             pstmt = c.prepareStatement(pstmt.toString());
             System.out.println(pstmt.toString());
             pstmt.executeUpdate();

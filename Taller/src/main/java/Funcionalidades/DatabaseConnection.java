@@ -4,10 +4,12 @@ package Funcionalidades;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import model.LoginModel;
 
 public class DatabaseConnection {
     private static Connection con = null;
     private static int pid = -1;
+    public static LoginModel loginModel;
     static
     {
         initConnector();
