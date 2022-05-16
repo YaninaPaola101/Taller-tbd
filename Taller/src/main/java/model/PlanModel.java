@@ -52,5 +52,8 @@ public class PlanModel {
         this.meses = meses;
     }
     
-    
+    @Override
+    public String toString(){
+        return nombrePlan;
+    } 
 }
