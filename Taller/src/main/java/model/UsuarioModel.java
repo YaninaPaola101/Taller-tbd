@@ -5,18 +5,20 @@ package model;
 
 public class UsuarioModel {
 
+    private int id;
     private String nombre;
     private String contrasenia;
     private int edad; 
     private boolean activo;
+    private String rol;
 
     public UsuarioModel() {
     }
 
-    public UsuarioModel(String nombreUsuario, int edad, boolean activo) {
+    public UsuarioModel(int id, String nombreUsuario, int edad, boolean activo) {
+        this.id = id;
         this.nombre = nombreUsuario;
-        this.edad = edad;
-        
+        this.edad = edad;    
         this.activo = activo;
     }
 
@@ -42,6 +44,22 @@ public class UsuarioModel {
 
     public void setActivo(boolean activo) {
         this.activo = activo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
     
     
