@@ -32,10 +32,10 @@ public class RegistrarDisciplina extends javax.swing.JFrame {
         ButtonBuscar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        ComboBoxHoraDesde = new javax.swing.JComboBox<>();
-        ComboBoxMinutoDesde = new javax.swing.JComboBox<>();
-        ComboBoxHoraHasta = new javax.swing.JComboBox<>();
-        ComboBoxMinutoHasta = new javax.swing.JComboBox<>();
+        ComboBoxHoraDesde = new javax.swing.JComboBox(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24});
+        ComboBoxMinutoDesde = new javax.swing.JComboBox(new Integer[]{00, 10, 20, 30, 40, 50});
+        ComboBoxHoraHasta = new javax.swing.JComboBox(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24});
+        ComboBoxMinutoHasta = new javax.swing.JComboBox(new Integer[]{00, 10, 20, 30, 40, 50});
         ButtonAceptar = new javax.swing.JButton();
         ButtonCancelar = new javax.swing.JButton();
 

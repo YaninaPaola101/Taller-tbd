@@ -116,6 +116,7 @@ public class RegistrarPlan extends javax.swing.JFrame {
         planMo.setMeses(meses);
         PlanDao.registrarPlan(planMo);
         limpiarPlan();
+        this.setVisible(false);
     }//GEN-LAST:event_ButtonAceptarActionPerformed
 
     

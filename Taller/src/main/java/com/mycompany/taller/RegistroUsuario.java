@@ -155,6 +155,7 @@ public class RegistroUsuario extends javax.swing.JFrame {
         
         RolDao.insertarUsuarioRol(activo, rolSeleccionado.getId(), idUsuario);
         limpiarUsuario();
+        this.setVisible(false);
     }//GEN-LAST:event_ButtonAceptarActionPerformed
 
     private void ButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelarActionPerformed

@@ -2,15 +2,36 @@
 package Funcionalidades;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import model.RolModel;
 import model.UsuarioModel;
 
 
 
 public class UsuarioDao {
+
+    public static void modificarDatos(int fila, int id, String nombre, String edad, String activo, String rol) {
+        Connection c = DatabaseConnection.getConnection();
+        String query = "UPDATE public.usuario\n" +
+                        "SET nombre= ?, edad=? , activo=?\n" +
+                        "where id_usuario = ?;";
+        try {
+            PreparedStatement pstmt = c.prepareStatement(query);
+            pstmt.setString(1, nombre);
+            pstmt.setInt(2, Integer.parseInt(edad));
+            pstmt.setBoolean(3, activo.equals("true"));
+            pstmt.setInt(4, id);
+            pstmt.executeQuery();
+            System.err.println(pstmt.toString());
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e+"No se logro modificar");
+        }
+    }
     
     public  ArrayList<UsuarioModel> listarUsuarios() {
         Connection c = DatabaseConnection.getConnection();
@@ -35,4 +56,5 @@ public class UsuarioDao {
         }
         return listarUsuarios;
     }
+    
 }

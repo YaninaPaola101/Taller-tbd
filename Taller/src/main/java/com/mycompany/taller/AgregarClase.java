@@ -24,11 +24,11 @@ public class AgregarClase extends javax.swing.JFrame {
         ButtonCancelarClase = new javax.swing.JButton();
         ComboBoxNombre = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        ComboBoxHoraInicio = new javax.swing.JComboBox<>();
-        ComboBoxMinutoInicio = new javax.swing.JComboBox<>();
-        ComboBoxHoraFin = new javax.swing.JComboBox<>();
-        ComboBoxMinutoFin = new javax.swing.JComboBox<>();
+        ComboBoxHoraInicio = new javax.swing.JComboBox(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24});
+        ComboBoxHoraFin = new javax.swing.JComboBox(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24});
+        ComboBoxMinutoFin = new javax.swing.JComboBox(new Integer[]{00, 10, 20, 30, 40, 50});
         jLabel5 = new javax.swing.JLabel();
+        ComboBoxMinutoInicio = new javax.swing.JComboBox(new Integer[]{00, 10, 20, 30, 40, 50});
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,13 +42,13 @@ public class AgregarClase extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Nombre:");
+        jLabel2.setText("Disciplina:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Instructor:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
         ComboBoxInstructor.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.add(ComboBoxInstructor, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 280, 30));
@@ -81,9 +81,6 @@ public class AgregarClase extends javax.swing.JFrame {
         ComboBoxHoraInicio.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.add(ComboBoxHoraInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 60, 30));
 
-        ComboBoxMinutoInicio.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(ComboBoxMinutoInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 60, 30));
-
         ComboBoxHoraFin.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.add(ComboBoxHoraFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 60, 30));
 
@@ -94,6 +91,9 @@ public class AgregarClase extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Hora Fin:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
+
+        ComboBoxMinutoInicio.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(ComboBoxMinutoInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 60, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

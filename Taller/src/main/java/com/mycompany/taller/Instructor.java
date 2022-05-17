@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package com.mycompany.taller;
 
 import Funcionalidades.InstructorDao;
@@ -12,10 +9,7 @@ import model.InstructorModel;
 import model.DisciplinaModel;
 import model.UsuarioModel;
 
-/**
- *
- * @author rybel
- */
+
 public class Instructor extends javax.swing.JFrame {
     InstructorDao instructor = new InstructorDao();
     private DefaultTableModel tablaIns;

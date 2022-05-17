@@ -1,11 +1,16 @@
 
 package com.mycompany.taller;
 
+import Funcionalidades.DatabaseConnection;
 import Funcionalidades.LoginDAO;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import model.UsuarioModel;
 import Funcionalidades.UsuarioDao;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 
 public class Usuarios extends javax.swing.JFrame {
@@ -76,7 +81,7 @@ public class Usuarios extends javax.swing.JFrame {
         ButtonRegistrarCliente.setBackground(new java.awt.Color(204, 204, 204));
         ButtonRegistrarCliente.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ButtonRegistrarCliente.setForeground(new java.awt.Color(0, 0, 0));
-        ButtonRegistrarCliente.setText("Registrar Cliente");
+        ButtonRegistrarCliente.setText("Registrar Usuario");
         ButtonRegistrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonRegistrarClienteActionPerformed(evt);
@@ -88,12 +93,22 @@ public class Usuarios extends javax.swing.JFrame {
         ButtonEditarUsuario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonEditarUsuario.setForeground(new java.awt.Color(0, 0, 0));
         ButtonEditarUsuario.setText("Editar");
+        ButtonEditarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonEditarUsuarioActionPerformed(evt);
+            }
+        });
         jPanel1.add(ButtonEditarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, 110, 40));
 
         ButtonEliminarUsuario.setBackground(new java.awt.Color(204, 204, 204));
         ButtonEliminarUsuario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonEliminarUsuario.setForeground(new java.awt.Color(0, 0, 0));
         ButtonEliminarUsuario.setText("Eliminar");
+        ButtonEliminarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonEliminarUsuarioActionPerformed(evt);
+            }
+        });
         jPanel1.add(ButtonEliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 110, 40));
 
         ButtonMenuPrincipal.setBackground(new java.awt.Color(204, 204, 204));
@@ -150,6 +165,20 @@ public class Usuarios extends javax.swing.JFrame {
         this.setVisible(false);
     
     }//GEN-LAST:event_ButtonMenuPrincipalActionPerformed
+
+    private void ButtonEliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEliminarUsuarioActionPerformed
+    
+    }//GEN-LAST:event_ButtonEliminarUsuarioActionPerformed
+
+    private void ButtonEditarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEditarUsuarioActionPerformed
+        int fila = TableUsuarios.getSelectedRow();
+        int id = Integer.parseInt(this.TableUsuarios.getValueAt(fila, 0).toString());
+        String nombre = TableUsuarios.getValueAt(fila, 1).toString();
+        String edad = TableUsuarios.getValueAt(fila, 2).toString();
+        String activo = TableUsuarios.getValueAt(fila, 3).toString();
+        String rol = TableUsuarios.getValueAt(fila, 4).toString();
+        UsuarioDao.modificarDatos(fila, id, nombre, edad, activo, rol);
+    }//GEN-LAST:event_ButtonEditarUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
