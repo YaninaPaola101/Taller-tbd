@@ -25,12 +25,47 @@ public class UsuarioDao {
             pstmt.setInt(2, Integer.parseInt(edad));
             pstmt.setBoolean(3, activo.equals("true"));
             pstmt.setInt(4, id);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             System.err.println(pstmt.toString());
             
         } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e+"No se logro modificar");
+        } finally{
+            updateRol(rol, id);
+        }
+    }
+    
+    private static void updateRol(String rol,int idUsuario){
+        Connection c = DatabaseConnection.getConnection();
+        int idRol = getCodigoRol(rol);
+        String query = "update usuario_rol set id_rol = ? where id_usuario=?";
+        try {
+            PreparedStatement pstmt = c.prepareStatement(query);
+            pstmt.setInt(1, idRol);
+            pstmt.setInt(2, idUsuario);
+            pstmt.executeUpdate();
+            System.err.println(pstmt.toString());
+            
+        } catch (Exception e) {
+            e.printStackTrace();
             JOptionPane.showMessageDialog(null, e+"No se logro modificar");
         }
+    }
+    
+    private static int getCodigoRol(String rol){
+        switch(rol){
+            case "administrador" -> {
+                return 1;
+            }
+            case "usuario" -> {
+                return 2;
+            }
+            case "instructor" -> {
+                return 3;
+            }
+        }
+        return 1;
     }
     
     public  ArrayList<UsuarioModel> listarUsuarios() {
