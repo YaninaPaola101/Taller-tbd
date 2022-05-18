@@ -91,5 +91,19 @@ public class UsuarioDao {
         }
         return listarUsuarios;
     }
-    
+    public static void eliminarUsuario() {
+        Connection c = DatabaseConnection.getConnection();
+        String query = "UPDATE public.usuario\n" +
+                        "SET nombre= ?, edad=? , activo=?\n" +
+                        "where id_usuario = ?;";
+        try {
+            PreparedStatement pstmt = c.prepareStatement(query);
+            pstmt.executeUpdate();
+            System.err.println(pstmt.toString());
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e+"No se logro eliminar");
+        } 
+    }
 }

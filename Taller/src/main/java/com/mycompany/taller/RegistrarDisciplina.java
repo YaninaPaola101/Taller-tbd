@@ -29,7 +29,6 @@ public class RegistrarDisciplina extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         textNombre = new javax.swing.JTextField();
         textInstructor = new javax.swing.JTextField();
-        ButtonBuscar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         ComboBoxHoraDesde = new javax.swing.JComboBox(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24});
@@ -64,12 +63,6 @@ public class RegistrarDisciplina extends javax.swing.JFrame {
 
         textInstructor.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.add(textInstructor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 210, 30));
-
-        ButtonBuscar.setBackground(new java.awt.Color(204, 204, 204));
-        ButtonBuscar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        ButtonBuscar.setForeground(new java.awt.Color(0, 0, 0));
-        ButtonBuscar.setText("Buscar");
-        jPanel1.add(ButtonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 90, 30));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -182,7 +175,6 @@ public class RegistrarDisciplina extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonAceptar;
-    private javax.swing.JButton ButtonBuscar;
     private javax.swing.JButton ButtonCancelar;
     private javax.swing.JComboBox<String> ComboBoxHoraDesde;
     private javax.swing.JComboBox<String> ComboBoxHoraHasta;

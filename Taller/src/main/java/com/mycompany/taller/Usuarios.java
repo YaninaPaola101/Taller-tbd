@@ -167,7 +167,9 @@ public class Usuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonMenuPrincipalActionPerformed
 
     private void ButtonEliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEliminarUsuarioActionPerformed
-    
+        int fila = TableUsuarios.getSelectedRow();
+        String valor = TableUsuarios.getValueAt(fila, 0).toString();
+        UsuarioDao.eliminarUsuario(); 
     }//GEN-LAST:event_ButtonEliminarUsuarioActionPerformed
 
     private void ButtonEditarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEditarUsuarioActionPerformed
