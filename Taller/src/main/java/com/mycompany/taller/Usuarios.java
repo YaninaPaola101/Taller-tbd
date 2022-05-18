@@ -103,7 +103,7 @@ public class Usuarios extends javax.swing.JFrame {
         ButtonEliminarUsuario.setBackground(new java.awt.Color(204, 204, 204));
         ButtonEliminarUsuario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonEliminarUsuario.setForeground(new java.awt.Color(0, 0, 0));
-        ButtonEliminarUsuario.setText("Eliminar");
+        ButtonEliminarUsuario.setText("Inhabilitar");
         ButtonEliminarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonEliminarUsuarioActionPerformed(evt);
@@ -168,8 +168,10 @@ public class Usuarios extends javax.swing.JFrame {
 
     private void ButtonEliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEliminarUsuarioActionPerformed
         int fila = TableUsuarios.getSelectedRow();
-        String valor = TableUsuarios.getValueAt(fila, 0).toString();
-        UsuarioDao.eliminarUsuario(); 
+        int id = Integer.parseInt(this.TableUsuarios.getValueAt(fila, 0).toString());
+        String activo = TableUsuarios.getValueAt(fila, 3).toString();
+        //String valor = TableUsuarios.getValueAt(fila, 0).toString();
+        UsuarioDao.eliminarUsuario(id, activo); 
     }//GEN-LAST:event_ButtonEliminarUsuarioActionPerformed
 
     private void ButtonEditarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEditarUsuarioActionPerformed

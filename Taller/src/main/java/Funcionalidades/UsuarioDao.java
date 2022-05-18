@@ -91,19 +91,21 @@ public class UsuarioDao {
         }
         return listarUsuarios;
     }
-    public static void eliminarUsuario() {
+    public static void eliminarUsuario(int id, String activo) {
         Connection c = DatabaseConnection.getConnection();
         String query = "UPDATE public.usuario\n" +
-                        "SET nombre= ?, edad=? , activo=?\n" +
-                        "where id_usuario = ?;";
+                       "SET activo =?\n" +
+                        "where id_usuario =?;";
         try {
             PreparedStatement pstmt = c.prepareStatement(query);
-            pstmt.executeUpdate();
+            pstmt.setInt(1, id);
+            pstmt.setBoolean(2, activo.equals("true"));
+            pstmt.executeQuery();
             System.err.println(pstmt.toString());
             
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, e+"No se logro eliminar");
+            JOptionPane.showMessageDialog(null, e+"No se logro inhabilitar");
         } 
     }
 }
