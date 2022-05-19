@@ -34,7 +34,7 @@ public class MenuCliente extends javax.swing.JFrame {
         ButtonSucursal.setBackground(new java.awt.Color(204, 204, 204));
         ButtonSucursal.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         ButtonSucursal.setForeground(new java.awt.Color(0, 0, 0));
-        ButtonSucursal.setText("Sucursal");
+        ButtonSucursal.setText("Cerrar Sesion");
         ButtonSucursal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonSucursalActionPerformed(evt);
@@ -73,7 +73,7 @@ public class MenuCliente extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(ButtonDisciplina, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
+                        .addGap(133, 133, 133)
                         .addComponent(ButtonSucursal, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
@@ -84,9 +84,9 @@ public class MenuCliente extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ButtonHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonDisciplina, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addComponent(ButtonSucursal, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
+                .addComponent(ButtonSucursal, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 500, 290));

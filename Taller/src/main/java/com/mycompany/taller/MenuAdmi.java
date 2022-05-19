@@ -29,7 +29,6 @@ public class MenuAdmi extends javax.swing.JFrame {
         ButtonRenovar = new javax.swing.JButton();
         ButtonHorario = new javax.swing.JButton();
         ButtonInstructor = new javax.swing.JButton();
-        ButtonSucursal = new javax.swing.JButton();
         ButtonCerrarSesion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -100,16 +99,6 @@ public class MenuAdmi extends javax.swing.JFrame {
             }
         });
 
-        ButtonSucursal.setBackground(new java.awt.Color(204, 204, 204));
-        ButtonSucursal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        ButtonSucursal.setForeground(new java.awt.Color(0, 0, 0));
-        ButtonSucursal.setText("Sucursal");
-        ButtonSucursal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonSucursalActionPerformed(evt);
-            }
-        });
-
         ButtonCerrarSesion.setBackground(new java.awt.Color(204, 204, 204));
         ButtonCerrarSesion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonCerrarSesion.setForeground(new java.awt.Color(0, 0, 0));
@@ -129,8 +118,7 @@ public class MenuAdmi extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(ButtonInstructor, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
                     .addComponent(ButtonUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ButtonHorario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ButtonSucursal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(ButtonHorario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -157,9 +145,7 @@ public class MenuAdmi extends javax.swing.JFrame {
                     .addComponent(ButtonHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonRenovar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ButtonCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonSucursal, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(ButtonCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -206,11 +192,6 @@ public class MenuAdmi extends javax.swing.JFrame {
         disciplina.setVisible(true);
 
     }//GEN-LAST:event_ButtonDisciplinaActionPerformed
-
-    private void ButtonSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSucursalActionPerformed
-        sucursal = new Sucursal();
-        sucursal.setVisible(true);
-    }//GEN-LAST:event_ButtonSucursalActionPerformed
 
     private void ButtonPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPlanActionPerformed
         plan = new Plan();
@@ -265,7 +246,6 @@ public class MenuAdmi extends javax.swing.JFrame {
     private javax.swing.JButton ButtonInstructor;
     private javax.swing.JButton ButtonPlan;
     private javax.swing.JButton ButtonRenovar;
-    private javax.swing.JButton ButtonSucursal;
     private javax.swing.JButton ButtonUsuario;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
