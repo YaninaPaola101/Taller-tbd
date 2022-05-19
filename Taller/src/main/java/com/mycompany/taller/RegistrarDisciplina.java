@@ -64,6 +64,11 @@ public class RegistrarDisciplina extends javax.swing.JFrame {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, 30));
 
         textNombre.setBackground(new java.awt.Color(204, 204, 204));
+        textNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textNombreActionPerformed(evt);
+            }
+        });
         jPanel1.add(textNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 210, 30));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -163,11 +168,6 @@ public class RegistrarDisciplina extends javax.swing.JFrame {
         int minutoInicio = (Integer) ComboBoxMinutoDesde.getSelectedItem();
         int horaFin = (Integer) ComboBoxHoraHasta.getSelectedItem();
         int minutoFin = (Integer) ComboBoxMinutoHasta.getSelectedItem();
-        //disciplinaMo.setHoraInicio(horaInicio);
-        //disciplinaMo.setMinutoInicio(minutoInicio);
-        //disciplinaMo.setHoraFin(horaFin);
-        //disciplinaMo.setMinutoFin(minutoFin);
-        //DisciplinaDao.registrarDisciplina(disciplinaMo);
         limpiarDisciplina(); 
         this.setVisible(false);
     }//GEN-LAST:event_ButtonAceptarActionPerformed
@@ -175,6 +175,10 @@ public class RegistrarDisciplina extends javax.swing.JFrame {
     private void ComboBoxInstructorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxInstructorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ComboBoxInstructorActionPerformed
+
+    private void textNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textNombreActionPerformed
 
     /**
      * @param args the command line arguments

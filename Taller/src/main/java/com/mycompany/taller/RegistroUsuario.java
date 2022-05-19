@@ -153,8 +153,8 @@ public class RegistroUsuario extends javax.swing.JFrame {
         LoginDAO.insertarUsuario(loginModel);
         int idUsuario = LoginDAO.getUserId(nombre, contrasenia);
         RolModel rolSeleccionado = (RolModel) ComboBoxRol.getSelectedItem();
-        if(rolSeleccionado.getId() == 2){
-        InstructorDao.insertarInstructor(idUsuario, nombre);
+        if(rolSeleccionado.getId() == 3){
+            InstructorDao.insertarInstructor(idUsuario, nombre);
         }
         RolDao.insertarUsuarioRol(activo, rolSeleccionado.getId(), idUsuario);
         limpiarUsuario();

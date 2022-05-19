@@ -134,7 +134,7 @@ public class Disciplinas extends javax.swing.JFrame {
 
     private void ButtonRegistrarDisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRegistrarDisciplinaActionPerformed
         this.setVisible(true);
-        new RegistrarDisciplina().setVisible(true);
+        new AgregarDisciplina().setVisible(true);
     }//GEN-LAST:event_ButtonRegistrarDisciplinaActionPerformed
 
     private void ButtonMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMenuPrincipalActionPerformed

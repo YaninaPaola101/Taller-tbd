@@ -1,6 +1,7 @@
 
 package com.mycompany.taller;
 
+import Funcionalidades.ClaseDAO;
 import Funcionalidades.DisciplinaDao;
 import Funcionalidades.InstructorDao;
 import Funcionalidades.InstructorDao;
@@ -161,7 +162,17 @@ public class AgregarClase extends javax.swing.JFrame {
     }//GEN-LAST:event_ComboBoxInstructorActionPerformed
 
     private void ButtonAgregarClaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAgregarClaseActionPerformed
-        // TODO add your handling code here:
+        
+        DisciplinaModel disciplinaMo = (DisciplinaModel) ComboBoxNombre.getSelectedItem();
+        InstructorModel instructorSeleccionado = (InstructorModel) ComboBoxInstructor.getSelectedItem();
+        int horaInicio = (Integer) ComboBoxHoraInicio.getSelectedItem();
+        int minutoInicio = (Integer) ComboBoxMinutoInicio.getSelectedItem();
+        int horaFin = (Integer) ComboBoxHoraFin.getSelectedItem();
+        int minutoFin = (Integer) ComboBoxMinutoFin.getSelectedItem();
+        String ini = horaInicio+":"+minutoInicio+":00";
+        String fin = horaFin+":"+minutoFin+":00";
+        
+        ClaseDAO.insertarClase(ini, fin, disciplinaMo.getId(), instructorSeleccionado.getId());
     }//GEN-LAST:event_ButtonAgregarClaseActionPerformed
 
     
