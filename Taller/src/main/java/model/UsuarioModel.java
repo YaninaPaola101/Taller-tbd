@@ -15,12 +15,15 @@ public class UsuarioModel {
     public UsuarioModel() {
     }
 
-    public UsuarioModel(int id, String nombreUsuario, int edad, boolean activo) {
+    public UsuarioModel(int id, String nombre, String contrasenia, int edad, boolean activo) {
         this.id = id;
-        this.nombre = nombreUsuario;
-        this.edad = edad;    
+        this.nombre = nombre;
+        this.contrasenia = contrasenia;
+        this.edad = edad;
         this.activo = activo;
     }
+
+    
 
     public String getNombreUsuario() {
         return nombre;

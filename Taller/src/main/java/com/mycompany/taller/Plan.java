@@ -44,7 +44,6 @@ public class Plan extends javax.swing.JFrame {
         ButtonRegistrarPlan = new javax.swing.JButton();
         ButtonActualizarPlan = new javax.swing.JButton();
         ButtonEditarPlan = new javax.swing.JButton();
-        ButtonEliminarPlan = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -106,13 +105,12 @@ public class Plan extends javax.swing.JFrame {
         ButtonEditarPlan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonEditarPlan.setForeground(new java.awt.Color(0, 0, 0));
         ButtonEditarPlan.setText("Editar");
+        ButtonEditarPlan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonEditarPlanActionPerformed(evt);
+            }
+        });
         jPanel1.add(ButtonEditarPlan, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, 110, 30));
-
-        ButtonEliminarPlan.setBackground(new java.awt.Color(204, 204, 204));
-        ButtonEliminarPlan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        ButtonEliminarPlan.setForeground(new java.awt.Color(0, 0, 0));
-        ButtonEliminarPlan.setText("Eliminar");
-        jPanel1.add(ButtonEliminarPlan, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, 110, 30));
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -123,7 +121,7 @@ public class Plan extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 260, 120, 30));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 210, 120, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -155,6 +153,15 @@ public class Plan extends javax.swing.JFrame {
     private void ButtonActualizarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonActualizarPlanActionPerformed
         listarPlan();
     }//GEN-LAST:event_ButtonActualizarPlanActionPerformed
+
+    private void ButtonEditarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEditarPlanActionPerformed
+        int fila = TablePlan.getSelectedRow();
+        int id = Integer.parseInt(this.TablePlan.getValueAt(fila, 0).toString());
+        String nombre = TablePlan.getValueAt(fila, 1).toString();
+        int meses = Integer.parseInt(TablePlan.getValueAt(fila, 2).toString());
+        int costo = Integer.parseInt(TablePlan.getValueAt(fila, 3).toString());
+        PlanDao.modificarPlan(fila, id, nombre, meses, costo);
+    }//GEN-LAST:event_ButtonEditarPlanActionPerformed
 
     
     public static void main(String args[]) {
@@ -192,7 +199,6 @@ public class Plan extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonActualizarPlan;
     private javax.swing.JButton ButtonEditarPlan;
-    private javax.swing.JButton ButtonEliminarPlan;
     private javax.swing.JButton ButtonRegistrarPlan;
     private javax.swing.JTable TablePlan;
     private javax.swing.JButton jButton1;

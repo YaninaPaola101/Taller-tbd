@@ -41,13 +41,13 @@ public class Horario extends javax.swing.JFrame {
         TableHorario.setBackground(new java.awt.Color(255, 255, 255));
         TableHorario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Hora de inicio", "Hora de fin"
+                "Disciplina", "Instructor", "Hora de inicio", "Hora de fin"
             }
         ));
         jScrollPane1.setViewportView(TableHorario);

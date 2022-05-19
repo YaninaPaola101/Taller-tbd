@@ -1,6 +1,12 @@
 
 package com.mycompany.taller;
 
+import Funcionalidades.DisciplinaDao;
+import Funcionalidades.InstructorDao;
+import java.util.ArrayList;
+import model.DisciplinaModel;
+import model.InstructorModel;
+
 
 public class RegistrarDisciplina extends javax.swing.JFrame {
 
@@ -12,7 +18,6 @@ public class RegistrarDisciplina extends javax.swing.JFrame {
     }
     private void limpiarDisciplina(){
         textNombre.setText("");
-        textInstructor.setText("");
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,7 +33,6 @@ public class RegistrarDisciplina extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         textNombre = new javax.swing.JTextField();
-        textInstructor = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         ComboBoxHoraDesde = new javax.swing.JComboBox(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24});
@@ -37,6 +41,7 @@ public class RegistrarDisciplina extends javax.swing.JFrame {
         ComboBoxMinutoHasta = new javax.swing.JComboBox(new Integer[]{00, 10, 20, 30, 40, 50});
         ButtonAceptar = new javax.swing.JButton();
         ButtonCancelar = new javax.swing.JButton();
+        ComboBoxInstructor = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,13 +61,10 @@ public class RegistrarDisciplina extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Instructor:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, 30));
 
         textNombre.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.add(textNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 210, 30));
-
-        textInstructor.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(textInstructor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 210, 30));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -111,6 +113,26 @@ public class RegistrarDisciplina extends javax.swing.JFrame {
         });
         jPanel1.add(ButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 130, 30));
 
+        ArrayList<InstructorModel> instructor = InstructorDao.getAllInstructor();
+        InstructorModel[] instructorModelos = new InstructorModel[instructor.size()];
+        for(int i = 0 ; i<instructor.size() ;i++){
+            instructorModelos[i]= instructor.get(i);
+        }
+        ComboBoxInstructor.setBackground(new java.awt.Color(204, 204, 204));
+        ComboBoxInstructor.setModel(new javax.swing.DefaultComboBoxModel(instructorModelos));
+
+        ComboBoxInstructor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboBoxInstructorActionPerformed(evt);
+            }
+        });
+        ComboBoxInstructor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboBoxInstructorActionPerformed(evt);
+            }
+        });
+        jPanel1.add(ComboBoxInstructor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 210, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -134,9 +156,25 @@ public class RegistrarDisciplina extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonCancelarActionPerformed
 
     private void ButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAceptarActionPerformed
-        // TODO add your handling code here:
-        limpiarDisciplina();
+        String nombre = textNombre.getText();
+        DisciplinaModel disciplinaMo = new DisciplinaModel(nombre);
+        InstructorModel instructorSeleccionado = (InstructorModel) ComboBoxInstructor.getSelectedItem();
+        int horaInicio = (Integer) ComboBoxHoraDesde.getSelectedItem();
+        int minutoInicio = (Integer) ComboBoxMinutoDesde.getSelectedItem();
+        int horaFin = (Integer) ComboBoxHoraHasta.getSelectedItem();
+        int minutoFin = (Integer) ComboBoxMinutoHasta.getSelectedItem();
+        //disciplinaMo.setHoraInicio(horaInicio);
+        //disciplinaMo.setMinutoInicio(minutoInicio);
+        //disciplinaMo.setHoraFin(horaFin);
+        //disciplinaMo.setMinutoFin(minutoFin);
+        //DisciplinaDao.registrarDisciplina(disciplinaMo);
+        limpiarDisciplina(); 
+        this.setVisible(false);
     }//GEN-LAST:event_ButtonAceptarActionPerformed
+
+    private void ComboBoxInstructorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxInstructorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComboBoxInstructorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,6 +216,7 @@ public class RegistrarDisciplina extends javax.swing.JFrame {
     private javax.swing.JButton ButtonCancelar;
     private javax.swing.JComboBox<String> ComboBoxHoraDesde;
     private javax.swing.JComboBox<String> ComboBoxHoraHasta;
+    private javax.swing.JComboBox<String> ComboBoxInstructor;
     private javax.swing.JComboBox<String> ComboBoxMinutoDesde;
     private javax.swing.JComboBox<String> ComboBoxMinutoHasta;
     private javax.swing.JLabel jLabel1;
@@ -186,7 +225,6 @@ public class RegistrarDisciplina extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField textInstructor;
     private javax.swing.JTextField textNombre;
     // End of variables declaration//GEN-END:variables
 }

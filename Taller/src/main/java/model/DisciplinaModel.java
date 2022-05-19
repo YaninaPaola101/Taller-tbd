@@ -10,9 +10,9 @@ public class DisciplinaModel {
     public DisciplinaModel() {
     }
 
-    public DisciplinaModel(String disciplina, int id) {
+    public DisciplinaModel(String disciplina) {
         this.disciplina = disciplina;
-        this.id = id;
+        
     }
 
     public String getDisciplina() {
@@ -31,6 +31,9 @@ public class DisciplinaModel {
         this.id = id;
     }
     
-    
+    @Override
+    public String toString() {
+        return disciplina;
+    }
     
 }

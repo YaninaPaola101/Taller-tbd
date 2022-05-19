@@ -1,6 +1,12 @@
 
 package com.mycompany.taller;
 
+import Funcionalidades.DisciplinaDao;
+import Funcionalidades.InstructorDao;
+import Funcionalidades.InstructorDao;
+import java.util.ArrayList;
+import model.DisciplinaModel;
+import model.InstructorModel;
 
 public class AgregarClase extends javax.swing.JFrame {
 
@@ -50,13 +56,35 @@ public class AgregarClase extends javax.swing.JFrame {
         jLabel3.setText("Instructor:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
+        ArrayList<InstructorModel> instructor = InstructorDao.getAllInstructor();
+        InstructorModel[] instructorModelos = new InstructorModel[instructor.size()];
+        for(int i = 0 ; i<instructor.size() ;i++){
+            instructorModelos[i]= instructor.get(i);
+        }
         ComboBoxInstructor.setBackground(new java.awt.Color(204, 204, 204));
+        ComboBoxInstructor.setModel(new javax.swing.DefaultComboBoxModel(instructorModelos));
+
+        ComboBoxNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboBoxInstructorActionPerformed(evt);
+            }
+        });
+        ComboBoxInstructor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboBoxInstructorActionPerformed(evt);
+            }
+        });
         jPanel1.add(ComboBoxInstructor, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 280, 30));
 
         ButtonAgregarClase.setBackground(new java.awt.Color(204, 204, 204));
         ButtonAgregarClase.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonAgregarClase.setForeground(new java.awt.Color(0, 0, 0));
         ButtonAgregarClase.setText("Agregar");
+        ButtonAgregarClase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonAgregarClaseActionPerformed(evt);
+            }
+        });
         jPanel1.add(ButtonAgregarClase, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 130, 40));
 
         ButtonCancelarClase.setBackground(new java.awt.Color(204, 204, 204));
@@ -70,7 +98,18 @@ public class AgregarClase extends javax.swing.JFrame {
         });
         jPanel1.add(ButtonCancelarClase, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 130, 40));
 
+        ArrayList<DisciplinaModel> disciplina = DisciplinaDao.getAllDisciplina();
+        DisciplinaModel[] disciplinasModelos = new DisciplinaModel[disciplina.size()];
+        for(int i = 0 ; i<disciplina.size() ;i++){
+            disciplinasModelos[i]= disciplina.get(i);
+        }
         ComboBoxNombre.setBackground(new java.awt.Color(204, 204, 204));
+        ComboBoxNombre.setModel(new javax.swing.DefaultComboBoxModel(disciplinasModelos));
+        ComboBoxNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboBoxNombreActionPerformed(evt);
+            }
+        });
         jPanel1.add(ComboBoxNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 280, 30));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -112,6 +151,18 @@ public class AgregarClase extends javax.swing.JFrame {
     private void ButtonCancelarClaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelarClaseActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_ButtonCancelarClaseActionPerformed
+
+    private void ComboBoxNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComboBoxNombreActionPerformed
+
+    private void ComboBoxInstructorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxInstructorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComboBoxInstructorActionPerformed
+
+    private void ButtonAgregarClaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAgregarClaseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonAgregarClaseActionPerformed
 
     
     public static void main(String args[]) {

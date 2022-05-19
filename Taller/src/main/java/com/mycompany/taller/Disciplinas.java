@@ -1,17 +1,37 @@
 
 package com.mycompany.taller;
 
+import Funcionalidades.DisciplinaDao;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import model.DisciplinaModel;
+import model.UsuarioModel;
+
 
 public class Disciplinas extends javax.swing.JFrame {
 
-    
+    DisciplinaDao dis = new DisciplinaDao();
+    private DefaultTableModel disciplina;
     public Disciplinas() {
         initComponents();
         this.setLocationRelativeTo(null); 
         this.setResizable(false);
+        listarDis();
     }
 
-   
+    private void listarDis(){
+        ArrayList<DisciplinaModel> listaDisciplinas=new ArrayList();
+        listaDisciplinas = dis.listarDisciplina();
+        disciplina = (DefaultTableModel) TableDisciplina.getModel();
+        disciplina.setRowCount(0);
+        Object[] ob = new Object[2];
+        for(int i=0; i<listaDisciplinas.size(); i++){
+            ob[0]=listaDisciplinas.get(i).getId();
+            ob[1]=listaDisciplinas.get(i).getDisciplina();
+            disciplina.addRow(ob);
+        }
+        TableDisciplina.setModel(disciplina);
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -42,7 +62,7 @@ public class Disciplinas extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "Disciplina", "Instructor"
+                "Id", "Disciplina"
             }
         ));
         jScrollPane1.setViewportView(TableDisciplina);

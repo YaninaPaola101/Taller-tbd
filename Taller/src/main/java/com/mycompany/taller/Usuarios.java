@@ -103,13 +103,13 @@ public class Usuarios extends javax.swing.JFrame {
         ButtonEliminarUsuario.setBackground(new java.awt.Color(204, 204, 204));
         ButtonEliminarUsuario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonEliminarUsuario.setForeground(new java.awt.Color(0, 0, 0));
-        ButtonEliminarUsuario.setText("Inhabilitar");
+        ButtonEliminarUsuario.setText("Habi/Inhabi");
         ButtonEliminarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonEliminarUsuarioActionPerformed(evt);
             }
         });
-        jPanel1.add(ButtonEliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 110, 40));
+        jPanel1.add(ButtonEliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 250, 120, 40));
 
         ButtonMenuPrincipal.setBackground(new java.awt.Color(204, 204, 204));
         ButtonMenuPrincipal.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -172,6 +172,7 @@ public class Usuarios extends javax.swing.JFrame {
         String activo = TableUsuarios.getValueAt(fila, 3).toString();
         //String valor = TableUsuarios.getValueAt(fila, 0).toString();
         UsuarioDao.eliminarUsuario(id, activo); 
+        listarUsuario();
     }//GEN-LAST:event_ButtonEliminarUsuarioActionPerformed
 
     private void ButtonEditarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEditarUsuarioActionPerformed

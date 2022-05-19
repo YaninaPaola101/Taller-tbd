@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import model.PlanModel;
 
 
@@ -47,5 +48,24 @@ public class PlanDao {
             e.printStackTrace();
         }
         return listPlan;
+    }
+    public static void modificarPlan(int fila, int id, String nombre, int meses, int costo) {
+        Connection c = DatabaseConnection.getConnection();
+        String query = "UPDATE public.plan\n" +
+                        "SET nombre= ?, meses=? , costo=?\n" +
+                        "where id_plan = ?;";
+        try {
+            PreparedStatement pstmt = c.prepareStatement(query);
+            pstmt.setString(1, nombre);
+            pstmt.setInt(2, meses);
+            pstmt.setInt(3, costo);
+            pstmt.setInt(4, id);
+            pstmt.executeUpdate();
+            System.err.println(pstmt.toString());
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e+"No se logro modificar");
+        }
     }
 }

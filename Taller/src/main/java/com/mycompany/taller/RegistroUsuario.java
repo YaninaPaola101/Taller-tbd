@@ -1,6 +1,7 @@
 
 package com.mycompany.taller;
 
+import Funcionalidades.InstructorDao;
 import Funcionalidades.LoginDAO;
 import model.LoginModel;
 import Funcionalidades.RolDao;
@@ -152,7 +153,9 @@ public class RegistroUsuario extends javax.swing.JFrame {
         LoginDAO.insertarUsuario(loginModel);
         int idUsuario = LoginDAO.getUserId(nombre, contrasenia);
         RolModel rolSeleccionado = (RolModel) ComboBoxRol.getSelectedItem();
-        
+        if(rolSeleccionado.getId() == 2){
+        InstructorDao.insertarInstructor(idUsuario, nombre);
+        }
         RolDao.insertarUsuarioRol(activo, rolSeleccionado.getId(), idUsuario);
         limpiarUsuario();
         this.setVisible(false);

@@ -30,5 +30,8 @@ public class InstructorModel {
         this.id = id;
     }
     
-    
+    @Override
+    public String toString() {
+        return nombreInstructor;
+    }
 }

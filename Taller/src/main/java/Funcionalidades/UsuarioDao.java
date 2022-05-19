@@ -98,9 +98,9 @@ public class UsuarioDao {
                         "where id_usuario =?;";
         try {
             PreparedStatement pstmt = c.prepareStatement(query);
-            pstmt.setInt(1, id);
-            pstmt.setBoolean(2, activo.equals("true"));
-            pstmt.executeQuery();
+            pstmt.setBoolean(1, !activo.equals("true"));
+            pstmt.setInt(2, id);
+            pstmt.executeUpdate();
             System.err.println(pstmt.toString());
             
         } catch (Exception e) {
