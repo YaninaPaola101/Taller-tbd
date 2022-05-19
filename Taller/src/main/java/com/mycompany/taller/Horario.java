@@ -22,8 +22,6 @@ public class Horario extends javax.swing.JFrame {
         TableHorario = new javax.swing.JTable();
         ButtonAgregarClase = new javax.swing.JButton();
         ButtonActualizar = new javax.swing.JButton();
-        ButtonEditar = new javax.swing.JButton();
-        ButtonEliminar = new javax.swing.JButton();
         ButtonMenuPrincipal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,18 +69,6 @@ public class Horario extends javax.swing.JFrame {
         ButtonActualizar.setText("Actualizar");
         jPanel1.add(ButtonActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 120, 40));
 
-        ButtonEditar.setBackground(new java.awt.Color(204, 204, 204));
-        ButtonEditar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        ButtonEditar.setForeground(new java.awt.Color(0, 0, 0));
-        ButtonEditar.setText("Editar");
-        jPanel1.add(ButtonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 120, 40));
-
-        ButtonEliminar.setBackground(new java.awt.Color(204, 204, 204));
-        ButtonEliminar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        ButtonEliminar.setForeground(new java.awt.Color(0, 0, 0));
-        ButtonEliminar.setText("Eliminar");
-        jPanel1.add(ButtonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 120, 40));
-
         ButtonMenuPrincipal.setBackground(new java.awt.Color(204, 204, 204));
         ButtonMenuPrincipal.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ButtonMenuPrincipal.setForeground(new java.awt.Color(0, 0, 0));
@@ -92,7 +78,7 @@ public class Horario extends javax.swing.JFrame {
                 ButtonMenuPrincipalActionPerformed(evt);
             }
         });
-        jPanel1.add(ButtonMenuPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 310, 120, 40));
+        jPanel1.add(ButtonMenuPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 120, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -153,8 +139,6 @@ public class Horario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonActualizar;
     private javax.swing.JButton ButtonAgregarClase;
-    private javax.swing.JButton ButtonEditar;
-    private javax.swing.JButton ButtonEliminar;
     private javax.swing.JButton ButtonMenuPrincipal;
     private javax.swing.JTable TableHorario;
     private javax.swing.JLabel jLabel1;

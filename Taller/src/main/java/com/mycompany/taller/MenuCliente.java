@@ -116,8 +116,8 @@ public class MenuCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonDisciplinaActionPerformed
 
     private void ButtonSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSucursalActionPerformed
-         sucursal = new Sucursal();
-         sucursal.setVisible(true);
+        this.setVisible(false);
+        new Login().setVisible(true);
     }//GEN-LAST:event_ButtonSucursalActionPerformed
 
     /**
