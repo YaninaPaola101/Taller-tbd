@@ -30,7 +30,6 @@ public class Renovar extends javax.swing.JFrame {
         ComboBoxPlan = new javax.swing.JComboBox();
         ButtonGuardar = new javax.swing.JButton();
         ButtonCancelar = new javax.swing.JButton();
-        LabelInformacion = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,11 +82,6 @@ public class Renovar extends javax.swing.JFrame {
         });
         jPanel1.add(ButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 140, 30));
 
-        LabelInformacion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        LabelInformacion.setForeground(new java.awt.Color(255, 255, 255));
-        LabelInformacion.setText("Informacion");
-        jPanel1.add(LabelInformacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 360, 40));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -96,7 +90,7 @@ public class Renovar extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -153,7 +147,6 @@ public class Renovar extends javax.swing.JFrame {
     private javax.swing.JButton ButtonCancelar;
     private javax.swing.JButton ButtonGuardar;
     private javax.swing.JComboBox<String> ComboBoxPlan;
-    private javax.swing.JLabel LabelInformacion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
