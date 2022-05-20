@@ -9,7 +9,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import model.LoginModel;
+import model.PlanModel;
+import model.Sesion;
 
 public class LoginDAO {
     
@@ -123,9 +126,28 @@ public class LoginDAO {
             pstmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
-            
-        }        
+        } finally {
+            int idSesion = getIdSesion(ip.toString(), pid);
+            DatabaseConnection.sesionModel = new Sesion(idSesion,ip.toString(),pid);
+        }       
     }
+    
+    private static int  getIdSesion(String ip,int pid){
+        Connection c = DatabaseConnection.getConnection();
+        String query = "select id_sesion from sesion limit 1";
+        int id = -1;
+        try {
+            Statement stat = c.createStatement();
+            ResultSet rs = stat.executeQuery(query);
+            while (rs.next()) {
+                id = rs.getInt(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return id;
+    }
+    
     private static InetAddress getIp(){
         InetAddress ip = null;
         String hostname;

@@ -5,11 +5,13 @@ package Funcionalidades;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import model.LoginModel;
+import model.Sesion;
 
 public class DatabaseConnection {
     private static Connection con = null;
     private static int pid = -1;
     public static LoginModel loginModel;
+    public static Sesion sesionModel;
     static
     {
         initConnector();

@@ -28,9 +28,12 @@ public class SuscripcionDao {
             pstmt = c.prepareStatement(pstmt.toString());
             System.out.println(pstmt.toString());
             pstmt.executeUpdate();
+            query = pstmt.toString();
         } catch (SQLException e) {
             e.printStackTrace();
             
+        } finally {
+            LogDao.insertarLog(DatabaseConnection.loginModel, DatabaseConnection.sesionModel, query);
         }
         
     }
@@ -48,6 +51,8 @@ public class SuscripcionDao {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            LogDao.insertarLog(DatabaseConnection.loginModel, DatabaseConnection.sesionModel, query);
         }
         return planResponse;
     }

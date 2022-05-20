@@ -29,7 +29,6 @@ public class ClaseDAO {
             pstmt.setInt(3, idDisciplina);
             pstmt.setInt(4, idUsuario);
             pstmt = c.prepareStatement(pstmt.toString());
-            System.out.println(pstmt.toString());
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

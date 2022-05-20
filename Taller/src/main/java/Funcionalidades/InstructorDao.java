@@ -30,6 +30,8 @@ public class InstructorDao {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            LogDao.insertarLog(DatabaseConnection.loginModel, DatabaseConnection.sesionModel, query);
         }
         return instructorResponse;
     }
@@ -50,6 +52,8 @@ public class InstructorDao {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            LogDao.insertarLog(DatabaseConnection.loginModel, DatabaseConnection.sesionModel, query);
         }
         return listInstructor;
     }
@@ -70,6 +74,8 @@ public class InstructorDao {
         } catch (SQLException e) {
             e.printStackTrace();
             
+        } finally {
+            LogDao.insertarLog(DatabaseConnection.loginModel, DatabaseConnection.sesionModel, query);
         }
     }
     

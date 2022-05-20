@@ -22,9 +22,12 @@ public class PlanDao {
             pstmt.setInt(2, pl.getCosto());
             pstmt.setInt(3, pl.getMeses());
             pstmt.executeUpdate();
+            query = pstmt.toString();
         } catch (Exception e) {
             e.printStackTrace();
             return false;
+        } finally {
+            LogDao.insertarLog(DatabaseConnection.loginModel, DatabaseConnection.sesionModel, query);
         }
         return true;
     }
@@ -46,6 +49,8 @@ public class PlanDao {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            LogDao.insertarLog(DatabaseConnection.loginModel, DatabaseConnection.sesionModel, query);
         }
         return listPlan;
     }
@@ -62,10 +67,13 @@ public class PlanDao {
             pstmt.setInt(4, id);
             pstmt.executeUpdate();
             System.err.println(pstmt.toString());
+            query = pstmt.toString();
             
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, e+"No se logro modificar");
+        } finally {
+            LogDao.insertarLog(DatabaseConnection.loginModel, DatabaseConnection.sesionModel, query);
         }
     }
 }

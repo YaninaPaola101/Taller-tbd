@@ -89,8 +89,10 @@ public class Login extends javax.swing.JFrame {
         String usuario = textUsuario.getText();
         String contrasenia = textPasword.getText();
         int userId = LoginDAO.getLoginStoredProcedures(new LoginModel(usuario, contrasenia,0,false));
-        DatabaseConnection.loginModel = new LoginModel(usuario, contrasenia, 0, true);
-        DatabaseConnection.loginModel.id = userId;
+        // Para la bitacora
+            DatabaseConnection.loginModel = new LoginModel(usuario, contrasenia, 0, true);
+            DatabaseConnection.loginModel.id = userId;
+        //
         if (userId >= 0) {
             UsuarioRolModel rolModel = LoginDAO.getRol(userId);
             if(rolModel != null ){

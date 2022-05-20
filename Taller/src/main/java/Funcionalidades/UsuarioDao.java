@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import model.RolModel;
 import model.UsuarioModel;
 
 
@@ -27,12 +26,13 @@ public class UsuarioDao {
             pstmt.setInt(4, id);
             pstmt.executeUpdate();
             System.err.println(pstmt.toString());
-            
+            query = pstmt.toString();
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, e+"No se logro modificar");
         } finally{
             updateRol(rol, id);
+            LogDao.insertarLog(DatabaseConnection.loginModel, DatabaseConnection.sesionModel, query);
         }
     }
     
@@ -46,10 +46,13 @@ public class UsuarioDao {
             pstmt.setInt(2, idUsuario);
             pstmt.executeUpdate();
             System.err.println(pstmt.toString());
+            query = pstmt.toString();
             
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, e+"No se logro modificar");
+        }  finally {
+            LogDao.insertarLog(DatabaseConnection.loginModel, DatabaseConnection.sesionModel, query);
         }
     }
     
@@ -88,6 +91,8 @@ public class UsuarioDao {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            LogDao.insertarLog(DatabaseConnection.loginModel, DatabaseConnection.sesionModel, query);
         }
         return listarUsuarios;
     }
@@ -101,11 +106,14 @@ public class UsuarioDao {
             pstmt.setBoolean(1, !activo.equals("true"));
             pstmt.setInt(2, id);
             pstmt.executeUpdate();
+            query = pstmt.toString();
             System.err.println(pstmt.toString());
             
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, e+"No se logro inhabilitar");
-        } 
+        } finally {
+            LogDao.insertarLog(DatabaseConnection.loginModel, DatabaseConnection.sesionModel, query);
+        }
     }
 }
