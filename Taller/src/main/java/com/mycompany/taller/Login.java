@@ -101,11 +101,15 @@ public class Login extends javax.swing.JFrame {
                         "Usuario dado de baja");
                      return;
                 }
-                Date horaActual = new Date();  
-                if(!(horaActual.after(rolModel.fechaIni) && horaActual.before(rolModel.fechaFin))){
-                    JOptionPane.showMessageDialog(this,
-                    "Membresia expirada");
-                    return;
+                Date horaActual = new Date();
+                try {
+                    if(!(horaActual.after(rolModel.fechaIni) && horaActual.before(rolModel.fechaFin))){
+                        JOptionPane.showMessageDialog(this,
+                        "Membresia expirada");
+                        return;
+                    }
+                } catch (Exception e){
+                    System.out.println("Fechas de los roles no estan asignadas");
                 }
                 LoginDAO.guardarSesion();
                 dispose();
