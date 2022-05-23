@@ -1,7 +1,9 @@
 
 package com.mycompany.taller;
 
+import Funcionalidades.DatabaseConnection;
 import Funcionalidades.DisciplinaDao;
+import Funcionalidades.PermisosDao;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import model.DisciplinaModel;
@@ -17,7 +19,27 @@ public class Disciplinas extends javax.swing.JFrame {
         this.setLocationRelativeTo(null); 
         this.setResizable(false);
         listarDis();
+        actualizarBotones();
     }
+    
+    
+    
+    private void actualizarBotones(){
+        ArrayList<String> permisos = PermisosDao.getPermisos(DatabaseConnection.loginModel.usuario);
+        for(String permiso : permisos){
+            switch(permiso){
+                case "registrar_disciplina": ButtonRegistrarDisciplina.setEnabled(true); break;
+                case "actualizar_lista_disciplina": ButtonActualizarDisciplina.setEnabled(true); break;
+                case "editar_disciplina": ButtonEditarDisciplina.setEnabled(true); break;
+                case "habilitar_disciplina": ButtonEliminarDisciplina.setEnabled(true); break;
+            }
+        }
+        
+    }
+    
+    
+    
+
 
     private void listarDis(){
         ArrayList<DisciplinaModel> listaDisciplinas=new ArrayList();
@@ -73,12 +95,14 @@ public class Disciplinas extends javax.swing.JFrame {
         ButtonActualizarDisciplina.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonActualizarDisciplina.setForeground(new java.awt.Color(0, 0, 0));
         ButtonActualizarDisciplina.setText("Actualizar");
+        ButtonActualizarDisciplina.setEnabled(false);
         jPanel1.add(ButtonActualizarDisciplina, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, 120, 40));
 
         ButtonRegistrarDisciplina.setBackground(new java.awt.Color(204, 204, 204));
         ButtonRegistrarDisciplina.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ButtonRegistrarDisciplina.setForeground(new java.awt.Color(0, 0, 0));
         ButtonRegistrarDisciplina.setText("Registrar Disciplina");
+        ButtonRegistrarDisciplina.setEnabled(false);
         ButtonRegistrarDisciplina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonRegistrarDisciplinaActionPerformed(evt);
@@ -95,12 +119,14 @@ public class Disciplinas extends javax.swing.JFrame {
         ButtonEditarDisciplina.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonEditarDisciplina.setForeground(new java.awt.Color(0, 0, 0));
         ButtonEditarDisciplina.setText("Editar");
+        ButtonEditarDisciplina.setEnabled(false);
         jPanel1.add(ButtonEditarDisciplina, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, 120, 40));
 
         ButtonEliminarDisciplina.setBackground(new java.awt.Color(204, 204, 204));
         ButtonEliminarDisciplina.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonEliminarDisciplina.setForeground(new java.awt.Color(0, 0, 0));
         ButtonEliminarDisciplina.setText("Eliminar");
+        ButtonEliminarDisciplina.setEnabled(false);
         jPanel1.add(ButtonEliminarDisciplina, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, 120, 40));
 
         ButtonMenuPrincipal.setBackground(new java.awt.Color(204, 204, 204));

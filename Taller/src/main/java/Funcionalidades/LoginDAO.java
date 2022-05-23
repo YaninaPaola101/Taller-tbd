@@ -222,9 +222,8 @@ public class LoginDAO {
         }
         catch(NoSuchAlgorithmException  Ex)
         {
-            
+            Ex.printStackTrace();
         }
-        
         return sb.toString();
     }
 }

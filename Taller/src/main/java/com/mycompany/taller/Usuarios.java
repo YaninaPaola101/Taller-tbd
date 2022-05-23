@@ -3,6 +3,7 @@ package com.mycompany.taller;
 
 import Funcionalidades.DatabaseConnection;
 import Funcionalidades.LoginDAO;
+import Funcionalidades.PermisosDao;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import model.UsuarioModel;
