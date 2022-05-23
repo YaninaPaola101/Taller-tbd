@@ -5,6 +5,8 @@ package Funcionalidades;
 import model.UsuarioRolModel;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,7 +24,7 @@ public class LoginDAO {
     public static boolean insertarUsuario(LoginModel login) {
         Connection c = DatabaseConnection.getConnection();
         String query = " INSERT INTO public.usuario(nombre, contrasenia, edad, activo) "
-                + "VALUES ('" +login.getUsuario()+"','"+login.getContrasenia()+"',"+login.edad +","+true+")";
+                + "VALUES ('" +login.getUsuario()+"','"+sha512(login.getContrasenia())+"',"+login.edad +","+true+")";
         System.out.println(query);
         try {
             PreparedStatement pstmt = c.prepareStatement(query);
@@ -204,6 +206,26 @@ public class LoginDAO {
             return -1;
         }
         return id;
+    }
+    
+    public static String sha512(String contrasenia){
+        StringBuilder sb = new StringBuilder();
+        try
+        {
+            MessageDigest md = MessageDigest.getInstance("SHA-512");
+            md.update(contrasenia.getBytes());
+            byte[] mb= md.digest();
+            for(int i =0; i<mb.length; i++)
+            {
+                sb.append(Integer.toString((mb[i] & 0xff) * 0x100, 16).substring(1));
+            }
+        }
+        catch(NoSuchAlgorithmException  Ex)
+        {
+            
+        }
+        
+        return sb.toString();
     }
 }
 
