@@ -1,8 +1,10 @@
 
 package model;
 
+import jakarta.persistence.*;
 
-
+@Entity
+@Table(name = "sucursal")
 public class SucursalModel {
 
     private int id;

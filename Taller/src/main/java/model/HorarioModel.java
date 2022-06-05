@@ -1,7 +1,10 @@
 
 package model;
 
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "clase")
 public class HorarioModel {
     private int id;
     private int inicio;

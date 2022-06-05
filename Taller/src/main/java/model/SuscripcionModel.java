@@ -1,7 +1,10 @@
 
 package model;
 
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "suscripcion")
 public class SuscripcionModel {
     private int id;
     private String plan;

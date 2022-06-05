@@ -1,10 +1,15 @@
 
 package model;
 
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "disciplina")
 public class DisciplinaModel {
-    
+    @Id
+    @Column(name = "id_disciplina")
     private int id;
+    @Column(name = "nombre")
     private String disciplina;
 
     public DisciplinaModel() {

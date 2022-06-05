@@ -1,7 +1,10 @@
 
 package model;
 
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "instructor")
 public class InstructorModel {
     private int id;
     private String nombreInstructor;

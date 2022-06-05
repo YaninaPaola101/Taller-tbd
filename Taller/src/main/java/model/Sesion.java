@@ -1,5 +1,9 @@
 package model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "sesion")
 public class Sesion {
 
     public int getIdSesion() {

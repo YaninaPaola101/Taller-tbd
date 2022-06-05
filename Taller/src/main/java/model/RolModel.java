@@ -1,7 +1,10 @@
 
 package model;
 
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "rol")
 public class RolModel {
     private int id;
     private String nombre;

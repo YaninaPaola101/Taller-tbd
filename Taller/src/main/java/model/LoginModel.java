@@ -1,8 +1,11 @@
 
 package model;
 
+import jakarta.persistence.*;
 
 
+@Entity
+@Table(name = "log")
 public class LoginModel {
     public String contrasenia;
     public String usuario;

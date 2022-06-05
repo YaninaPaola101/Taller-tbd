@@ -1,9 +1,11 @@
 
 package model;
 
+import jakarta.persistence.*;
 import java.util.Date;
 
-
+@Entity
+@Table(name = "usuario_rol")
 public class UsuarioRolModel {
    
     public String nombreRol;
