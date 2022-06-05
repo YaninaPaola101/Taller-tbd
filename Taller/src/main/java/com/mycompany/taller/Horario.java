@@ -1,16 +1,53 @@
 
 package com.mycompany.taller;
 
+import Funcionalidades.DatabaseConnection;
+import Funcionalidades.HorarioDao;
+import Funcionalidades.PermisosDao;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import model.HorarioModel;
+
 
 public class Horario extends javax.swing.JFrame {
+
+    
+    private DefaultTableModel tablaIns;
 
     
     public Horario() {
         initComponents();
         this.setLocationRelativeTo(null); 
         this.setResizable(false);
+        listarClases();
+        actualizarBotones();
+    }
+    private void listarClases(){
+        ArrayList<HorarioModel> listaHorario = new ArrayList();
+        listaHorario = HorarioDao.listaInstructor();
+        tablaIns = (DefaultTableModel) TableHorario.getModel();
+        tablaIns.setRowCount(0);
+        Object[] ob = new Object[4];
+        for(int i=0; i<listaHorario.size(); i++){
+            ob[0]=listaHorario.get(i).getDisciplina();
+            ob[1]=listaHorario.get(i).getInstructor();
+            ob[2]=listaHorario.get(i).getInicioClase();
+            ob[3]=listaHorario.get(i).getFinClase();
+            tablaIns.addRow(ob);
+        }
+        TableHorario.setModel(tablaIns);
     }
 
+    private void actualizarBotones(){
+        ArrayList<String> permisos = PermisosDao.getPermisos(DatabaseConnection.loginModel.usuario);
+        for(String permiso : permisos){
+            switch(permiso){
+                case "agregar_clase": ButtonAgregarClase.setEnabled(true); break;
+                case "actualizar_lista_clase": ButtonActualizar.setEnabled(true); break;
+            }
+        }
+        
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -56,6 +93,7 @@ public class Horario extends javax.swing.JFrame {
         ButtonAgregarClase.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ButtonAgregarClase.setForeground(new java.awt.Color(0, 0, 0));
         ButtonAgregarClase.setText("Agregar Clase");
+        ButtonAgregarClase.setEnabled(false);
         ButtonAgregarClase.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonAgregarClaseActionPerformed(evt);
@@ -67,6 +105,12 @@ public class Horario extends javax.swing.JFrame {
         ButtonActualizar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonActualizar.setForeground(new java.awt.Color(0, 0, 0));
         ButtonActualizar.setText("Actualizar");
+        ButtonActualizar.setEnabled(false);
+        ButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonActualizarActionPerformed(evt);
+            }
+        });
         jPanel1.add(ButtonActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 120, 40));
 
         ButtonMenuPrincipal.setBackground(new java.awt.Color(204, 204, 204));
@@ -102,6 +146,10 @@ public class Horario extends javax.swing.JFrame {
     private void ButtonMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMenuPrincipalActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_ButtonMenuPrincipalActionPerformed
+
+    private void ButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonActualizarActionPerformed
+       listarClases();
+    }//GEN-LAST:event_ButtonActualizarActionPerformed
 
    
     public static void main(String args[]) {

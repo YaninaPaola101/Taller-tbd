@@ -96,7 +96,7 @@ public class LoginDAO {
 
     public static int getLoginStoredProcedures(LoginModel login) {
         Connection c = DatabaseConnection.getConnection();
-        String query = "CALL performLogin('" + login.usuario + "','" + login.contrasenia + "')";
+        String query = "CALL performLogin('" + login.usuario + "','" + sha512(login.contrasenia) + "')";
         int id = -1;
         System.out.println(query);
         try {
@@ -196,7 +196,7 @@ public class LoginDAO {
         try {
             PreparedStatement pstmt = c.prepareStatement(query);
             pstmt.setString(1, nombre);
-            pstmt.setString(2, contrasenia);
+            pstmt.setString(2, sha512(contrasenia));
             ResultSet rs = pstmt.executeQuery();
             if(rs.next()){
                 id = rs.getInt("id_usuario");
@@ -222,9 +222,8 @@ public class LoginDAO {
         }
         catch(NoSuchAlgorithmException  Ex)
         {
-            
+            Ex.printStackTrace();
         }
-        
         return sb.toString();
     }
 }
