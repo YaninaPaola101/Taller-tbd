@@ -10,7 +10,7 @@ import model.Sesion;
 public class LogDao {
       
     public static void insertarLog(LoginModel login, Sesion sesion,String queryTexto){
-        Connection c = DatabaseConnection.getConnection();
+        /*Connection c = DatabaseConnection.getConnection();
         String query = """
                         INSERT INTO public.log(
                       	id_usuario, id_sesion, "queryTexto")
@@ -31,7 +31,7 @@ public class LogDao {
             e.printStackTrace();
             
         }
-        
+        */
     }
     
 }

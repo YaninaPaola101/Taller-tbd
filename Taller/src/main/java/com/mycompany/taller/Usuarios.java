@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import model.UsuarioModel;
 import Funcionalidades.UsuarioDao;
+import HibernateFun.UsuarioManejo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
@@ -183,7 +184,13 @@ public class Usuarios extends javax.swing.JFrame {
         String edad = TableUsuarios.getValueAt(fila, 2).toString();
         String activo = TableUsuarios.getValueAt(fila, 3).toString();
         String rol = TableUsuarios.getValueAt(fila, 4).toString();
-        UsuarioDao.modificarDatos(fila, id, nombre, edad, activo, rol);
+        UsuarioModel modelo = new UsuarioModel();
+        modelo.setActivo(activo.equals("true"));
+        modelo.setId(id);
+        modelo.setEdad(Integer.parseInt(edad));
+        modelo.setNombreUsuario(nombre);
+        modelo.setRol(rol);
+        UsuarioManejo.modificarUsuario(modelo);
     }//GEN-LAST:event_ButtonEditarUsuarioActionPerformed
 
     /**

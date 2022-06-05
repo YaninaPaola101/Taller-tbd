@@ -88,7 +88,8 @@ public class Login extends javax.swing.JFrame {
     private void ButtonEntrarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEntrarLoginActionPerformed
         String usuario = textUsuario.getText();
         String contrasenia = textPasword.getText();
-        int userId = LoginDAO.getLoginStoredProcedures(new LoginModel(usuario, contrasenia,0,false));
+        //int userId = LoginDAO.getLoginStoredProcedures(new LoginModel(usuario, contrasenia,0,false));
+        int userId = 14;
         // Para la bitacora
             DatabaseConnection.loginModel = new LoginModel(usuario, contrasenia, 0, true);
             DatabaseConnection.loginModel.id = userId;
