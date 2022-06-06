@@ -1,6 +1,7 @@
 
 package HibernateFun;
 
+import java.io.File;
 import model.UsuarioModel;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -23,7 +24,7 @@ public class UsuarioManejo {
          
      }
      public static void modificarUsuario(UsuarioModel usu) {
-         SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(UsuarioModel.class).buildSessionFactory();
+         SessionFactory factory = new Configuration().configure(new File("hibernate.cfg.xml")).addAnnotatedClass(UsuarioModel.class).buildSessionFactory();
          Session session = factory.openSession();
          try {
              session.beginTransaction();
