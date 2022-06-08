@@ -1,8 +1,8 @@
 
 package model;
 
-import jakarta.persistence.*;
-
+import javax.persistence.*;
+import javax.persistence.Entity;
 
 @Entity
 @Table(name = "log")

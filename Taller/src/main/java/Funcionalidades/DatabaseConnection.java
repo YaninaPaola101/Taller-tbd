@@ -17,7 +17,7 @@ public class DatabaseConnection {
         initConnector();
     }
     private static void initConnector(){
-        String url = "jdbc:postgresql://localhost:5433/TallerBaseDatos";
+        String url = "jdbc:postgresql://localhost:5433/Taller";
         String user = "postgres"; //maestro
         String pass = "psql";
         try {

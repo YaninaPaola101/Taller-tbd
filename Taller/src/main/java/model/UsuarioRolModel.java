@@ -1,13 +1,15 @@
 
 package model;
 
-import jakarta.persistence.*;
 import java.util.Date;
+import javax.persistence.*;
+import javax.persistence.Entity;
 
 @Entity
 @Table(name = "usuario_rol")
 public class UsuarioRolModel {
    
+    @Id
     public String nombreRol;
     public String nombreUsuario;
     public boolean activo;

@@ -1,4 +1,3 @@
-
 package com.mycompany.taller;
 
 import Funcionalidades.DatabaseConnection;
@@ -14,20 +13,19 @@ import java.sql.PreparedStatement;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
-
 public class Usuarios extends javax.swing.JFrame {
 
     private RegistroUsuario registro;
     UsuarioDao usu = new UsuarioDao();
     private DefaultTableModel usuario;
+
     public Usuarios() {
         initComponents();
-        this.setLocationRelativeTo(null); 
+        this.setLocationRelativeTo(null);
         this.setResizable(false);
         listarUsuario();
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -137,19 +135,19 @@ public class Usuarios extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
-    private void listarUsuario(){
-        ArrayList<UsuarioModel> listaUsuario=new ArrayList();
+
+    private void listarUsuario() {
+        ArrayList<UsuarioModel> listaUsuario = new ArrayList();
         listaUsuario = usu.listarUsuarios();
         usuario = (DefaultTableModel) TableUsuarios.getModel();
         usuario.setRowCount(0);
         Object[] ob = new Object[5];
-        for(int i=0; i<listaUsuario.size(); i++){
-            ob[0]=listaUsuario.get(i).getId();
-            ob[1]=listaUsuario.get(i).getNombreUsuario();
-            ob[2]=listaUsuario.get(i).getEdad();
-            ob[3]=listaUsuario.get(i).isActivo();
-            ob[4]=listaUsuario.get(i).getRol();
+        for (int i = 0; i < listaUsuario.size(); i++) {
+            ob[0] = listaUsuario.get(i).getId();
+            ob[1] = listaUsuario.get(i).getNombreUsuario();
+            ob[2] = listaUsuario.get(i).getEdad();
+            ob[3] = listaUsuario.get(i).isActivo();
+            ob[4] = listaUsuario.get(i).getRol();
             usuario.addRow(ob);
         }
         TableUsuarios.setModel(usuario);
@@ -165,7 +163,7 @@ public class Usuarios extends javax.swing.JFrame {
 
     private void ButtonMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMenuPrincipalActionPerformed
         this.setVisible(false);
-    
+
     }//GEN-LAST:event_ButtonMenuPrincipalActionPerformed
 
     private void ButtonEliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEliminarUsuarioActionPerformed
@@ -173,7 +171,7 @@ public class Usuarios extends javax.swing.JFrame {
         int id = Integer.parseInt(this.TableUsuarios.getValueAt(fila, 0).toString());
         String activo = TableUsuarios.getValueAt(fila, 3).toString();
         //String valor = TableUsuarios.getValueAt(fila, 0).toString();
-        UsuarioDao.eliminarUsuario(id, activo); 
+        UsuarioDao.eliminarUsuario(id, activo);
         listarUsuario();
     }//GEN-LAST:event_ButtonEliminarUsuarioActionPerformed
 

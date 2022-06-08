@@ -1,7 +1,8 @@
 
 package model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+import javax.persistence.Entity;
 
 @Entity
 @Table(name = "usuario")
@@ -12,7 +13,7 @@ public class UsuarioModel {
     private int id;
     @Column(name = "nombre")
     private String nombre;
-    @Column(name = "contrasenia")
+    @Column(name = "contrasenia",updatable=false)
     private String contrasenia;
     @Column(name = "edad")
     private int edad; 
