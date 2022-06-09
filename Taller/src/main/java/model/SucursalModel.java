@@ -7,8 +7,10 @@ import javax.persistence.Entity;
 @Entity
 @Table(name = "sucursal")
 public class SucursalModel {
-
+    @Id
+    @Column(name = "id_sucursal")
     private int id;
+    @Column(name = "direccion")
     private String direccion;
 
     public SucursalModel() {

@@ -7,7 +7,10 @@ import javax.persistence.Entity;
 @Entity
 @Table(name = "suscripcion")
 public class SuscripcionModel {
+    @Id
+    @Column(name = "id_inscripcion")
     private int id;
+    @Column(name = "")
     private String plan;
 
     public SuscripcionModel(int id, String plan) {

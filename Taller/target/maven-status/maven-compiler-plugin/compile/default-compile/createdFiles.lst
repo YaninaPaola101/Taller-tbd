@@ -20,7 +20,6 @@ com\mycompany\taller\Horario$2.class
 com\mycompany\taller\Plan$3.class
 model\RolModel.class
 com\mycompany\taller\Login.class
-org\hibernate\annotations\Entity.class
 com\mycompany\taller\Horario$4.class
 com\mycompany\taller\Plan$5.class
 com\mycompany\taller\RegistrarDisciplina$1.class
@@ -30,7 +29,6 @@ com\mycompany\taller\Login$1.class
 com\mycompany\taller\MenuInstructor.class
 com\mycompany\taller\Disciplinas.class
 com\mycompany\taller\Usuarios$3.class
-model\EmployeeEntity.class
 com\mycompany\taller\RegistrarDisciplina$4.class
 com\mycompany\taller\AgregarClase$6.class
 model\SucursalModel.class

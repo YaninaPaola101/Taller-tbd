@@ -11,12 +11,14 @@ import HibernateFun.UsuarioManejo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 public class Usuarios extends javax.swing.JFrame {
 
     private RegistroUsuario registro;
     UsuarioDao usu = new UsuarioDao();
+    UsuarioManejo usumanejo = new UsuarioManejo();
     private DefaultTableModel usuario;
 
     public Usuarios() {
@@ -137,8 +139,8 @@ public class Usuarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void listarUsuario() {
-        ArrayList<UsuarioModel> listaUsuario = new ArrayList();
-        listaUsuario = usu.listarUsuarios();
+        List<UsuarioModel> listaUsuario = new ArrayList();
+        listaUsuario = usumanejo.actualizarLista();
         usuario = (DefaultTableModel) TableUsuarios.getModel();
         usuario.setRowCount(0);
         Object[] ob = new Object[5];
@@ -169,9 +171,17 @@ public class Usuarios extends javax.swing.JFrame {
     private void ButtonEliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEliminarUsuarioActionPerformed
         int fila = TableUsuarios.getSelectedRow();
         int id = Integer.parseInt(this.TableUsuarios.getValueAt(fila, 0).toString());
+        String nombre = TableUsuarios.getValueAt(fila, 1).toString();
+        String edad = TableUsuarios.getValueAt(fila, 2).toString();
         String activo = TableUsuarios.getValueAt(fila, 3).toString();
-        //String valor = TableUsuarios.getValueAt(fila, 0).toString();
-        UsuarioDao.eliminarUsuario(id, activo);
+        String rol = TableUsuarios.getValueAt(fila, 4).toString();
+        UsuarioModel modelo = new UsuarioModel();
+        modelo.setId(id);
+        modelo.setActivo(!activo.equals("true"));
+        modelo.setEdad(Integer.parseInt(edad));
+        modelo.setNombreUsuario(nombre);
+        modelo.setRol(rol);
+        UsuarioManejo.inhabilitarUsuario(modelo);
         listarUsuario();
     }//GEN-LAST:event_ButtonEliminarUsuarioActionPerformed
 

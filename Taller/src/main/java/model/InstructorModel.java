@@ -7,7 +7,10 @@ import javax.persistence.Entity;
 @Entity
 @Table(name = "instructor")
 public class InstructorModel {
+    @Id
+    @Column(name = "instructor")
     private int id;
+    @Column(name = "nombre")
     private String nombreInstructor;
 
     public InstructorModel() {

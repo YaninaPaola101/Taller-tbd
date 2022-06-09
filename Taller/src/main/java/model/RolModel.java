@@ -7,7 +7,11 @@ import javax.persistence.Entity;
 @Entity
 @Table(name = "rol")
 public class RolModel {
+    
+    @Id
+    @Column(name = "id_rol")
     private int id;
+    @Column(name = "nombre")
     private String nombre;
 
     public RolModel(int id, String nombre) {

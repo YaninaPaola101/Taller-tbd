@@ -3,7 +3,9 @@ package com.mycompany.taller;
 
 import Funcionalidades.InstructorDao;
 import Funcionalidades.UsuarioDao;
+import HibernateFun.InstructorManejo;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import model.InstructorModel;
 import model.DisciplinaModel;
@@ -12,6 +14,7 @@ import model.UsuarioModel;
 
 public class Instructor extends javax.swing.JFrame {
     InstructorDao instructor = new InstructorDao();
+    InstructorManejo manejoins = new InstructorManejo();
     private DefaultTableModel tablaIns;
     public Instructor() {
         initComponents();
@@ -21,14 +24,14 @@ public class Instructor extends javax.swing.JFrame {
     }
 
     private void listarInstructor(){
-        ArrayList<UsuarioModel> listaInstructor=new ArrayList();
-        listaInstructor = instructor.listaInstructor();
+        List<InstructorModel> listaInstructor=new ArrayList();
+        listaInstructor = manejoins.actualizarLista();
         tablaIns = (DefaultTableModel) TableInstructor.getModel();
         tablaIns.setRowCount(0);
         Object[] ob = new Object[2];
         for(int i=0; i<listaInstructor.size(); i++){
             ob[0]=listaInstructor.get(i).getId();
-            ob[1]=listaInstructor.get(i).getNombreUsuario();
+            ob[1]=listaInstructor.get(i).getNombreInstructor();
             tablaIns.addRow(ob);
         }
         TableInstructor.setModel(tablaIns);
@@ -141,7 +144,7 @@ public class Instructor extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonMenuPrincipalActionPerformed
 
     private void ButtonActualizarInstructorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonActualizarInstructorActionPerformed
-        listarInstructor();
+       listarInstructor();
     }//GEN-LAST:event_ButtonActualizarInstructorActionPerformed
 
     /**

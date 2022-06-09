@@ -7,11 +7,18 @@ import javax.persistence.Entity;
 @Entity
 @Table(name = "log")
 public class LoginModel {
+    @Column(name = "")
     public String contrasenia;
+    @Column(name = "")
     public String usuario;
+    @Id
+    @Column(name = "")
     public int id;
+    @Column(name = "")
     public int edad;
+    @Column(name = "")
     private String rol;
+    @Column(name = "")
     public boolean activo;
     
     public String getRol() {

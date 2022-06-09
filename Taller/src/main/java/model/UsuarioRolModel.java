@@ -9,11 +9,15 @@ import javax.persistence.Entity;
 @Table(name = "usuario_rol")
 public class UsuarioRolModel {
    
-    @Id
+    @Column(name = "")
     public String nombreRol;
+    @Column(name = "")
     public String nombreUsuario;
+    @Column(name = "")
     public boolean activo;
+    @Column(name = "")
     public Date fechaIni;
+    @Column(name = "")
     public Date fechaFin;
 
     public UsuarioRolModel(String nombreRol, String nombreUsuario, boolean activo, Date fechaIni, Date fechaFin) {

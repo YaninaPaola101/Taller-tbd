@@ -7,10 +7,14 @@ import javax.persistence.Entity;
 @Entity
 @Table(name = "plan")
 public class PlanModel {
-
+    @Id
+    @Column(name = "id_plan")
     private int id;
+    @Column(name = "nombre")
     private String nombrePlan;
+    @Column(name = "costo")
     private int costo;
+    @Column(name = "meses")
     private int meses;
 
     public PlanModel() {

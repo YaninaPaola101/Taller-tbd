@@ -4,7 +4,9 @@ package com.mycompany.taller;
 import Funcionalidades.DatabaseConnection;
 import Funcionalidades.DisciplinaDao;
 import Funcionalidades.PermisosDao;
+import HibernateFun.DisciplinaManejo;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import model.DisciplinaModel;
 import model.UsuarioModel;
@@ -13,6 +15,7 @@ import model.UsuarioModel;
 public class Disciplinas extends javax.swing.JFrame {
 
     DisciplinaDao dis = new DisciplinaDao();
+    DisciplinaManejo manejodis = new DisciplinaManejo();
     private DefaultTableModel disciplina;
     public Disciplinas() {
         initComponents();
@@ -42,8 +45,8 @@ public class Disciplinas extends javax.swing.JFrame {
 
 
     private void listarDis(){
-        ArrayList<DisciplinaModel> listaDisciplinas=new ArrayList();
-        listaDisciplinas = dis.listarDisciplina();
+        List<DisciplinaModel> listaDisciplinas=new ArrayList();
+        listaDisciplinas = manejodis.actualizarLista();
         disciplina = (DefaultTableModel) TableDisciplina.getModel();
         disciplina.setRowCount(0);
         Object[] ob = new Object[2];
@@ -96,6 +99,11 @@ public class Disciplinas extends javax.swing.JFrame {
         ButtonActualizarDisciplina.setForeground(new java.awt.Color(0, 0, 0));
         ButtonActualizarDisciplina.setText("Actualizar");
         ButtonActualizarDisciplina.setEnabled(false);
+        ButtonActualizarDisciplina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonActualizarDisciplinaActionPerformed(evt);
+            }
+        });
         jPanel1.add(ButtonActualizarDisciplina, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, 120, 40));
 
         ButtonRegistrarDisciplina.setBackground(new java.awt.Color(204, 204, 204));
@@ -166,6 +174,10 @@ public class Disciplinas extends javax.swing.JFrame {
     private void ButtonMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMenuPrincipalActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_ButtonMenuPrincipalActionPerformed
+
+    private void ButtonActualizarDisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonActualizarDisciplinaActionPerformed
+        listarDis();
+    }//GEN-LAST:event_ButtonActualizarDisciplinaActionPerformed
 
     
     public static void main(String args[]) {

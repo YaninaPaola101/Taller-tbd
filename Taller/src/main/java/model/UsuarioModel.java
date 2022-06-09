@@ -19,6 +19,7 @@ public class UsuarioModel {
     private int edad; 
     @Column(name = "activo")
     private boolean activo;
+    @Column(name = "rol")
     private String rol;
 
     public UsuarioModel() {

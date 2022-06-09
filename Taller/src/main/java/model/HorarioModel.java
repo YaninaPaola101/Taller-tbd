@@ -7,9 +7,14 @@ import javax.persistence.Entity;
 @Entity
 @Table(name = "clase")
 public class HorarioModel {
+    @Id
+    @Column(name = "id_horario")
     private int id;
+    @Column(name = "hora_inicio")
     private int inicio;
+    @Column(name = "hora_fin")
     private int fin;
+    @Column(name = "")
     private String disciplina;
 
     public String getDisciplina() {
