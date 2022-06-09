@@ -62,13 +62,17 @@ com\mycompany\taller\Instructor.class
 com\mycompany\taller\RegistrarDisciplina$3.class
 Funcionalidades\DisciplinaDao.class
 com\mycompany\taller\MenuInstructor$4.class
+HibernateFun\DisciplinaManejo.class
 com\mycompany\taller\AgregarClase$2.class
 com\mycompany\taller\Usuarios.class
 com\mycompany\taller\MenuInstructor$1.class
 model\DisciplinaModel.class
+model\UsuarioRol.class
 com\mycompany\taller\MenuCliente$1.class
+com\mycompany\taller\Disciplinas$4.class
 com\mycompany\taller\RegistroUsuario$2.class
 model\PlanModel.class
+HibernateFun\LoginManejo.class
 com\mycompany\taller\Plan.class
 com\mycompany\taller\Instructor$1.class
 com\mycompany\taller\MenuAdmi$1.class
@@ -106,3 +110,4 @@ com\mycompany\taller\RegistrarPlan$2.class
 com\mycompany\taller\Usuarios$5.class
 com\mycompany\taller\Plan$4.class
 com\mycompany\taller\Horario$3.class
+HibernateFun\InstructorManejo.class

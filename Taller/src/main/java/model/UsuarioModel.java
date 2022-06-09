@@ -1,6 +1,7 @@
 
 package model;
 
+import java.util.Set;
 import javax.persistence.*;
 import javax.persistence.Entity;
 
@@ -21,6 +22,10 @@ public class UsuarioModel {
     private boolean activo;
     @Column(name = "rol")
     private String rol;
+    
+    
+    @OneToMany(mappedBy = "usuarioModels")
+    Set<UsuarioRol> usuarioRols;
 
     public UsuarioModel() {
     }

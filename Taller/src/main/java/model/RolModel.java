@@ -1,6 +1,7 @@
 
 package model;
 
+import java.util.Set;
 import javax.persistence.*;
 import javax.persistence.Entity;
 
@@ -13,7 +14,10 @@ public class RolModel {
     private int id;
     @Column(name = "nombre")
     private String nombre;
-
+    
+    @OneToMany(mappedBy = "rolModel")
+    Set<UsuarioRol> usuarioRols;
+    
     public RolModel(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;

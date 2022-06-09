@@ -3,10 +3,13 @@ package com.mycompany.taller;
 
 import Funcionalidades.DatabaseConnection;
 import Funcionalidades.LoginDAO;
+import HibernateFun.LoginManejo;
 import model.LoginModel;
 import model.UsuarioRolModel;
 import java.util.Date;
+import java.util.List;
 import javax.swing.JOptionPane;
+import model.UsuarioModel;
 
 
 public class Login extends javax.swing.JFrame {
@@ -88,8 +91,10 @@ public class Login extends javax.swing.JFrame {
     private void ButtonEntrarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEntrarLoginActionPerformed
         String usuario = textUsuario.getText();
         String contrasenia = textPasword.getText();
-        //int userId = LoginDAO.getLoginStoredProcedures(new LoginModel(usuario, contrasenia,0,false));
-        int userId = 14;
+       
+        List<UsuarioModel> usuarios = LoginManejo.getListaUsuarios();
+        UsuarioModel u = usuarios.get(0);
+        int userId = LoginDAO.getLoginStoredProcedures(new LoginModel(usuario, contrasenia,0,false));
         // Para la bitacora
             DatabaseConnection.loginModel = new LoginModel(usuario, contrasenia, 0, true);
             DatabaseConnection.loginModel.id = userId;

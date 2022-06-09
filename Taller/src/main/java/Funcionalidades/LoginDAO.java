@@ -166,8 +166,8 @@ public class LoginDAO {
     public static UsuarioRolModel getRol(int idUsuario) {
         Connection c = DatabaseConnection.getConnection();
         String query = "select r.nombre nombreRol,ur.activo,ur.fecha_desde,ur.fecha_hasta,u.nombre nombreUsuario " + 
-                        "from rol r, usuario_rol ur, usuario u " +
-                        "where ? = ur.id_usuario " +
+                       "from rol r, usuario_rol ur, usuario u " +
+                       "where ? = ur.id_usuario " +
                                 "and r.id_rol = ur.id_rol";
         UsuarioRolModel rolResponse = null;
         try {
