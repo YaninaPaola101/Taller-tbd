@@ -28,15 +28,19 @@ public class Disciplinas extends javax.swing.JFrame {
     
     
     private void actualizarBotones(){
-        ArrayList<String> permisos = PermisosDao.getPermisos(DatabaseConnection.loginModel.usuario);
-        for(String permiso : permisos){
-            switch(permiso){
-                case "registrar_disciplina": ButtonRegistrarDisciplina.setEnabled(true); break;
-                case "actualizar_lista_disciplina": ButtonActualizarDisciplina.setEnabled(true); break;
-                case "editar_disciplina": ButtonEditarDisciplina.setEnabled(true); break;
-                case "habilitar_disciplina": ButtonEliminarDisciplina.setEnabled(true); break;
-            }
-        }
+        //ArrayList<String> permisos = PermisosDao.getPermisos(DatabaseConnection.loginModel.usuario);
+        //for(String permiso : permisos){
+        //    switch(permiso){
+        //        case "registrar_disciplina": ButtonRegistrarDisciplina.setEnabled(true); break;
+        //        case "actualizar_lista_disciplina": ButtonActualizarDisciplina.setEnabled(true); break;
+        //        case "editar_disciplina": ButtonEditarDisciplina.setEnabled(true); break;
+        //        case "habilitar_disciplina": ButtonEliminarDisciplina.setEnabled(true); break;
+        //    }
+        //}
+                 ButtonRegistrarDisciplina.setEnabled(true);
+                 ButtonActualizarDisciplina.setEnabled(true);
+                 ButtonEditarDisciplina.setEnabled(true);
+                 ButtonEliminarDisciplina.setEnabled(true);
         
     }
     
@@ -128,6 +132,11 @@ public class Disciplinas extends javax.swing.JFrame {
         ButtonEditarDisciplina.setForeground(new java.awt.Color(0, 0, 0));
         ButtonEditarDisciplina.setText("Editar");
         ButtonEditarDisciplina.setEnabled(false);
+        ButtonEditarDisciplina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonEditarDisciplinaActionPerformed(evt);
+            }
+        });
         jPanel1.add(ButtonEditarDisciplina, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, 120, 40));
 
         ButtonEliminarDisciplina.setBackground(new java.awt.Color(204, 204, 204));
@@ -135,6 +144,11 @@ public class Disciplinas extends javax.swing.JFrame {
         ButtonEliminarDisciplina.setForeground(new java.awt.Color(0, 0, 0));
         ButtonEliminarDisciplina.setText("Eliminar");
         ButtonEliminarDisciplina.setEnabled(false);
+        ButtonEliminarDisciplina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonEliminarDisciplinaActionPerformed(evt);
+            }
+        });
         jPanel1.add(ButtonEliminarDisciplina, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, 120, 40));
 
         ButtonMenuPrincipal.setBackground(new java.awt.Color(204, 204, 204));
@@ -178,6 +192,26 @@ public class Disciplinas extends javax.swing.JFrame {
     private void ButtonActualizarDisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonActualizarDisciplinaActionPerformed
         listarDis();
     }//GEN-LAST:event_ButtonActualizarDisciplinaActionPerformed
+
+    private void ButtonEditarDisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEditarDisciplinaActionPerformed
+        int fila = TableDisciplina.getSelectedRow();
+        int id = Integer.parseInt(this.TableDisciplina.getValueAt(fila, 0).toString());
+        String nombre = TableDisciplina.getValueAt(fila, 1).toString();
+        DisciplinaModel modelo = new DisciplinaModel();
+        modelo.setId(id);
+        modelo.setDisciplina(nombre);
+        DisciplinaManejo.modificarDisciplina(modelo);
+    }//GEN-LAST:event_ButtonEditarDisciplinaActionPerformed
+
+    private void ButtonEliminarDisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEliminarDisciplinaActionPerformed
+        int fila = TableDisciplina.getSelectedRow();
+        int id = Integer.parseInt(this.TableDisciplina.getValueAt(fila, 0).toString());
+        String nombre = TableDisciplina.getValueAt(fila, 1).toString();
+        DisciplinaModel modelo = new DisciplinaModel();
+        modelo.setId(id);
+        modelo.setDisciplina(nombre);
+        DisciplinaManejo.eliminarDisciplina(modelo);
+    }//GEN-LAST:event_ButtonEliminarDisciplinaActionPerformed
 
     
     public static void main(String args[]) {

@@ -8,7 +8,7 @@
  
         <!-- Connection settings -->
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5433/Taller</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5433/TallerBaseDatos</property>
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">psql</property>
  
@@ -21,8 +21,8 @@
         <!-- Update database on startup -->
         <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <mapping class="model.UsuarioRol"/>
-        <mapping class="model.RolModel"/>
+        <!--<mapping class="model.UsuarioRol"/>
+        <mapping class="model.RolModel"/>-->
         
     </session-factory>
 </hibernate-configuration>

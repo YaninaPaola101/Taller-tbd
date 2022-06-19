@@ -25,7 +25,6 @@ public class UsuarioManejo {
          }
      }
      
-     // Este es el q probe , y funciona 100 %
      public static void modificarUsuario(UsuarioModel usu) {
         SessionFactory sf =  new AnnotationConfiguration().configure(f).addAnnotatedClass(UsuarioModel.class).buildSessionFactory();
         Session session = sf.openSession();

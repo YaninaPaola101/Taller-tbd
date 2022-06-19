@@ -6,17 +6,17 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-@Entity
+//@Entity
 public class UsuarioRol {
     
     @Id
     Long id;
     
-    @ManyToOne
-    @JoinColumn(name="id_usuario")
+    //@ManyToOne
+    //@JoinColumn(name="id_usuario")
     UsuarioModel usuarioModels;
     
-    @ManyToOne
-    @JoinColumn(name="id_rol")
+    //@ManyToOne
+    //@JoinColumn(name="id_rol")
     RolModel rolModel;
 }
