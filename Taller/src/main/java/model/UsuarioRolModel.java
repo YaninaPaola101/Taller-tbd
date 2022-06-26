@@ -9,17 +9,33 @@ import javax.persistence.Entity;
 @Table(name = "usuario_rol")
 public class UsuarioRolModel {
    
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    Long id;
+    
     @Column(name = "")
     public String nombreRol;
     @Column(name = "")
     public String nombreUsuario;
-    @Column(name = "")
+    @Column(name = "activo")
     public boolean activo;
-    @Column(name = "")
+    @Column(name = "fecha_desde")
     public Date fechaIni;
-    @Column(name = "")
+    @Column(name = "fecha_hasta")
     public Date fechaFin;
-
+    
+    @ManyToOne
+    @JoinColumn(name="id_rol")
+    public RolModel rolModel;
+    
+    @ManyToOne
+    @JoinColumn(name="id_usuario")
+    public UsuarioModel usuarioModel;
+    
+    public UsuarioRolModel(){
+        
+    }
+    
     public UsuarioRolModel(String nombreRol, String nombreUsuario, boolean activo, Date fechaIni, Date fechaFin) {
         this.nombreRol = nombreRol;
         this.nombreUsuario = nombreUsuario;

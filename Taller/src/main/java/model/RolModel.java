@@ -16,8 +16,11 @@ public class RolModel {
     private String nombre;
     
     @OneToMany(mappedBy = "rolModel")
-    Set<UsuarioRol> usuarioRols;
+    Set<UsuarioRolModel> usuarioRolModels;
     
+    public RolModel(){
+        
+    }
     public RolModel(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;

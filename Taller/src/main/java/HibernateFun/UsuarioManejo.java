@@ -42,7 +42,7 @@ public class UsuarioManejo {
          
      }
      public static void GuardarUsuario(UsuarioModel usu) {
-         SessionFactory factory = new AnnotationConfiguration().configure("hibernate.cfg.xml").addAnnotatedClass(UsuarioModel.class).buildSessionFactory();
+         SessionFactory factory = new AnnotationConfiguration().configure(f).addAnnotatedClass(UsuarioModel.class).buildSessionFactory();
          Session session = factory.openSession();
          try {
              session.beginTransaction();            

@@ -3,10 +3,16 @@ package com.mycompany.taller;
 
 import Funcionalidades.InstructorDao;
 import Funcionalidades.LoginDAO;
+import static Funcionalidades.LoginDAO.sha512;
 import model.LoginModel;
 import Funcionalidades.RolDao;
+import HibernateFun.UsuarioManejo;
 import java.util.ArrayList;
+import java.util.Date;
 import model.RolModel;
+import model.UsuarioModel;
+import model.UsuarioRol;
+import model.UsuarioRolModel;
 
 
 public class RegistroUsuario extends javax.swing.JFrame {
@@ -150,13 +156,25 @@ public class RegistroUsuario extends javax.swing.JFrame {
         int edad = Integer.parseInt(textEdad.getText());
         boolean activo  = textActivo.getText().equals("true")? true :false;
         LoginModel loginModel = new LoginModel(nombre, contrasenia, edad, activo);
-        LoginDAO.insertarUsuario(loginModel);
-        int idUsuario = LoginDAO.getUserId(nombre, contrasenia);
+//        LoginDAO.insertarUsuario(loginModel);
+//        int idUsuario = LoginDAO.getUserId(nombre, contrasenia);
         RolModel rolSeleccionado = (RolModel) ComboBoxRol.getSelectedItem();
-        if(rolSeleccionado.getId() == 3){
-            InstructorDao.insertarInstructor(idUsuario, nombre);
-        }
-        RolDao.insertarUsuarioRol(activo, rolSeleccionado.getId(), idUsuario);
+//        RolDao.insertarUsuarioRol(activo, rolSeleccionado.getId(), idUsuario);
+        
+        UsuarioModel usuario = new UsuarioModel();
+        usuario.setNombreUsuario(nombre);
+        usuario.edad = edad;
+        usuario.activo = textActivo.getText().equals("true")? true :false;
+        usuario.rol = rolSeleccionado.getNombre();
+        usuario.contrasenia = sha512(contrasenia);
+        
+        
+        UsuarioRolModel usuarioRolModel = new UsuarioRolModel(rolSeleccionado.getNombre(), nombre, activo, new Date(), new Date());
+        usuarioRolModel.rolModel = rolSeleccionado;
+        usuarioRolModel.usuarioModel = usuario;
+        usuario.usuarioRolModel= usuarioRolModel;
+        
+        UsuarioManejo.GuardarUsuario(usuario);
         limpiarUsuario();
         this.setVisible(false);
     }//GEN-LAST:event_ButtonAceptarActionPerformed

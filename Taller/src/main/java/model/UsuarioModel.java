@@ -10,22 +10,24 @@ import javax.persistence.Entity;
 public class UsuarioModel {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id_usuario")
     private int id;
     @Column(name = "nombre")
     private String nombre;
     @Column(name = "contrasenia",updatable=false)
-    private String contrasenia;
+    public String contrasenia;
     @Column(name = "edad")
-    private int edad; 
+    public int edad; 
     @Column(name = "activo")
-    private boolean activo;
+    public boolean activo;
     @Column(name = "rol")
-    private String rol;
+    public String rol;
     
-    
-    @OneToMany(mappedBy = "usuarioModels")
-    Set<UsuarioRol> usuarioRols;
+    @OneToOne(mappedBy = "usuarioModel", cascade = CascadeType.ALL)
+    @JoinColumn(name="id_usuario")
+    public UsuarioRolModel usuarioRolModel;
+   
 
     public UsuarioModel() {
     }

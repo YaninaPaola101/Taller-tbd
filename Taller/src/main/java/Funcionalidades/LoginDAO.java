@@ -168,12 +168,14 @@ public class LoginDAO {
         String query = "select r.nombre nombreRol,ur.activo,ur.fecha_desde,ur.fecha_hasta,u.nombre nombreUsuario " + 
                        "from rol r, usuario_rol ur, usuario u " +
                        "where ? = ur.id_usuario " +
-                                "and r.id_rol = ur.id_rol";
+                        "and u.id_usuario = ur.id_usuario " +
+                              "and r.id_rol = ur.id_rol";
         UsuarioRolModel rolResponse = null;
         try {
             PreparedStatement pstmt = c.prepareStatement(query);
             pstmt.setInt(1, idUsuario);
             ResultSet rs = pstmt.executeQuery();
+            System.out.println(pstmt.toString());
             if (rs.next()) {
                 rolResponse = new UsuarioRolModel(rs.getString("nombrerol"),
                                         rs.getString("nombreusuario"),
