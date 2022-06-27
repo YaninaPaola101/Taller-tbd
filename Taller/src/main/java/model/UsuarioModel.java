@@ -24,9 +24,8 @@ public class UsuarioModel {
     @Column(name = "rol")
     public String rol;
     
-    @OneToOne(mappedBy = "usuarioModel", cascade = CascadeType.ALL)
-    @JoinColumn(name="id_usuario")
-    public UsuarioRolModel usuarioRolModel;
+    @OneToMany(mappedBy = "usuarioModel")
+    public Set<UsuarioRolModel> usuarioRolModels;
    
 
     public UsuarioModel() {

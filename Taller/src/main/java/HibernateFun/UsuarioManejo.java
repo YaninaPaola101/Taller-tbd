@@ -5,6 +5,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import model.UsuarioModel;
+import model.UsuarioRolModel;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
@@ -56,6 +57,23 @@ public class UsuarioManejo {
          }
          
      }
+     
+    public static void GuardarUsuario(UsuarioRolModel usu) {
+         SessionFactory factory = new AnnotationConfiguration().configure(f).addAnnotatedClass(UsuarioModel.class).buildSessionFactory();
+         Session session = factory.openSession();
+         try {
+             session.beginTransaction();            
+             session.save(usu);
+             session.getTransaction().commit();
+             System.out.println("Usuario modificado en la Base de datos");
+             session.close();
+             
+         } finally {
+             factory.close();
+         }
+         
+    }
+    
      public static List<UsuarioModel> actualizarLista() {
         SessionFactory sf =  new AnnotationConfiguration().configure(f).addAnnotatedClass(UsuarioModel.class).buildSessionFactory();
         Session session = sf.openSession();

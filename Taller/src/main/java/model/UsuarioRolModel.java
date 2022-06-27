@@ -24,11 +24,11 @@ public class UsuarioRolModel {
     @Column(name = "fecha_hasta")
     public Date fechaFin;
     
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="id_rol")
     public RolModel rolModel;
     
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="id_usuario")
     public UsuarioModel usuarioModel;
     

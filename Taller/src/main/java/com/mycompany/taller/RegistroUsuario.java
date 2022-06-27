@@ -9,6 +9,7 @@ import Funcionalidades.RolDao;
 import HibernateFun.UsuarioManejo;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import model.RolModel;
 import model.UsuarioModel;
 import model.UsuarioRol;
@@ -166,15 +167,15 @@ public class RegistroUsuario extends javax.swing.JFrame {
         usuario.edad = edad;
         usuario.activo = textActivo.getText().equals("true")? true :false;
         usuario.rol = rolSeleccionado.getNombre();
-        usuario.contrasenia = sha512(contrasenia);
-        
+        usuario.contrasenia = sha512(contrasenia);        
+      
         
         UsuarioRolModel usuarioRolModel = new UsuarioRolModel(rolSeleccionado.getNombre(), nombre, activo, new Date(), new Date());
         usuarioRolModel.rolModel = rolSeleccionado;
         usuarioRolModel.usuarioModel = usuario;
-        usuario.usuarioRolModel= usuarioRolModel;
         
-        UsuarioManejo.GuardarUsuario(usuario);
+       
+        UsuarioManejo.GuardarUsuario(usuarioRolModel);
         limpiarUsuario();
         this.setVisible(false);
     }//GEN-LAST:event_ButtonAceptarActionPerformed
